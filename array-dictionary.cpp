@@ -11,9 +11,9 @@
 ArrayDictionary::ArrayDictionary()
 {
   // Add your code here
-	int maxNumber = 10000;
+	maxNumber = 10000;
 	array = new ArrayDictionaryNode[maxNumber];
-	int currentNumber = 0;
+	currentNumber = 0;
 }
 
 // Add a record to the dictionary. Returns false if key already exists
