@@ -49,7 +49,7 @@ BinarySearchDictionary::insert(KeyType key, DataType record){
 
 ArrayDictionaryNode
 BinarySearchDictionary::removeMin(){
-	if(n>=0){
+	if(n>0){
 
 		ArrayDictionaryNode min = heap[0];
 		printf("removing %s\n",heap[0].key);
