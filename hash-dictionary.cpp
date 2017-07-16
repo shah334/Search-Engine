@@ -62,7 +62,21 @@ HashDictionary::addRecord( KeyType key, DataType record)
 DataType
 HashDictionary::findRecord( KeyType key)
 {
-	return NULL;
+	int h = hash(key);
+  	HashNode * ent = buckets[h];
+
+  	if(ent==NULL){
+    	return false;
+  	}else{
+    while(ent!=NULL){
+      if(strcmp(ent->key,key)==0){
+      	 return ent->data;  
+      }
+      ent = ent->next;
+    }
+    return NULL;
+  }
+  delete ent;
 }
 
 // Removes one element from the table
