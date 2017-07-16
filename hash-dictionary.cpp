@@ -113,19 +113,28 @@ HashDictionary::removeElement(KeyType key)
 KeyType *
 HashDictionary::keys(int * n)
 {
-	KeyType * a = (KeyType *) malloc(nElements * sizeof(KeyType));
-
+	//KeyType * a = (KeyType *) malloc(nElements * sizeof(KeyType));
+	int count = 0;
 	*n = nElements;
 	int i = 0;
 	for (int h = 0; h < MaxBuckets; h++) {
 		HashNode * n = buckets[h];
 		while (n!=NULL) {
-			a[i] = n->key;
+			count ++;
+			n = n->next;
+		}
+	}
+
+	KeyType * arr = new KeyType[count];
+	for (int h = 0; h < MaxBuckets; h++) {
+		HashNode * n = buckets[h];
+		while (n!=NULL) {
+			arr[i] = strdup(n->key);
 			i++;
 			n = n->next;
 		}
 	}
-	*n = nElements;
-	return a;
+	*n = count;
+	return arr;
 }
 
