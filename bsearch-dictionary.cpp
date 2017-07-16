@@ -31,7 +31,7 @@ BinarySearchDictionary::insert(KeyType key, DataType record){
 		heap = arr;
 	}//resize if full
 	heap[n].key = strdup(key);
-	printf("Inserting %s\n", heap[n].key);
+	//printf("Inserting %s\n", heap[n].key);
 	heap[n].data = record;
 	n++;
 	int child = n-1;
@@ -41,7 +41,7 @@ BinarySearchDictionary::insert(KeyType key, DataType record){
 			break;
 
 		ArrayDictionaryNode temp = heap[child];
-		printf("swapping %s\n", temp.key);
+		//printf("swapping %s\n", temp.key);
 		heap[child]=heap[parent];
 		heap[parent]=temp;
 	}
@@ -52,7 +52,7 @@ BinarySearchDictionary::removeMin(){
 	if(n>0){
 
 		ArrayDictionaryNode min = heap[0];
-		printf("removing %s\n",heap[0].key);
+		//printf("removing %s\n",heap[0].key);
 		n--;
 		if(n==0){
 			return min;
