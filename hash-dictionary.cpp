@@ -83,8 +83,27 @@ HashDictionary::findRecord( KeyType key)
 bool
 HashDictionary::removeElement(KeyType key)
 {
-  // Add your code here
-	return true;
+  int h = hash(key);
+  HashNode * node = buckets[h];
+  HashNode * prev = NULL;
+  while(node!=NULL){
+	  if(strcmp(node->key,key)==0){
+		  break;
+	  }
+	  prev = node;
+	  node = node->next;
+  }
+
+  if(node==NULL)
+  	return false;
+  if(prev==NULL){
+	  buckets[h] = node->next;
+  }else{
+	  prev->next = node->next;
+  }
+  //free(node);
+  delete node;
+  return true;
 }
 
 // Returns all the elements in the table as an array of strings.
