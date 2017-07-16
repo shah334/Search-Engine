@@ -54,7 +54,7 @@ HashDictionary::addRecord( KeyType key, DataType record)
     temp->key = strdup(key);
     temp->next = buckets[h];
     buckets[h] = temp;
-
+    nElements++;
   return true;
 }
 
@@ -103,6 +103,7 @@ HashDictionary::removeElement(KeyType key)
   }
   //free(node);
   delete node;
+  nElements--;
   return true;
 }
 
