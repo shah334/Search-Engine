@@ -133,6 +133,7 @@ void test4(Dictionary * dict)
   int grade;
   void * gradev;
   for (int i = 0; i < n; i++) {
+    printf("KEY: %s\n",keys[i]);
 	  gradev = dict->findRecord(keys[i]);
 	  grade = (long)gradev;
 	  sum+=grade;
