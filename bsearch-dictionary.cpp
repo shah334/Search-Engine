@@ -15,7 +15,7 @@ BinarySearchDictionary::BinarySearchDictionary()
 void
 BinarySearchDictionary::initHeap(){
 	n = 0;
-	max = maxNumber;
+	max = currentNumber;
 	heap = new ArrayDictionaryNode[max];
 }
 void 
