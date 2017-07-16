@@ -77,7 +77,7 @@ BinarySearchDictionary::removeMin(){
 			left = left_child(parent);
 			right = right_child(parent);
 		}
-
+		return min;
 	}
 }
 
