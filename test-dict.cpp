@@ -137,6 +137,7 @@ void test4(Dictionary * dict)
 	  grade = (long)gradev;
 	  sum+=grade;
   }
+  printf("SUM %d\n",sum);
 
   assert(sum==18);
 
