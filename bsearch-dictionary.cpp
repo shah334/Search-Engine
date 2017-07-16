@@ -57,7 +57,7 @@ BinarySearchDictionary::removeMin(){
 		if(n==0){
 			return min;
 		}
-		heap[0] = heap[n];
+		heap[0] = heap[n-1];
 		int parent = 0;
 		int left = left_child(parent);
 		int right = right_child(parent);
