@@ -12,7 +12,11 @@ BinarySearchDictionary::BinarySearchDictionary()
 {
 	sorted = false;
 }
-
+void
+BinarySearchDictionary::initHeap(){
+	n = 0;
+	max = maxNumber;
+}
 bool
 BinarySearchDictionary::addRecord( KeyType key, DataType record) {
 	sorted = false;

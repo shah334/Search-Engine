@@ -6,13 +6,21 @@
 
 class BinarySearchDictionary : public ArrayDictionary {
   // Add any member variables you need
+  //for heap
+  int n;
+  int max;
+  ArrayDictionaryNode * arr;
+
   bool sorted;
 public:
   // Constructor
   BinarySearchDictionary();
+
+  void initHeap();
   
   bool addRecord( KeyType key, DataType record);
   
+
   // Find a key in the dictionary and return corresponding record or NULL
   // Use binary search
   DataType findRecord( KeyType key);
