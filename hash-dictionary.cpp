@@ -38,12 +38,12 @@ HashDictionary::addRecord( KeyType key, DataType record)
     ent->data = record;
     ent->next = NULL;
     buckets[h] = ent;
-    return false;
+    return true;
   	}else{
     while(node!=NULL){
       if(strcmp(node->key,key)==0){
         node->data = record;
-        return true;
+        return false;
       }
       node = node->next;
       }
@@ -55,7 +55,7 @@ HashDictionary::addRecord( KeyType key, DataType record)
     temp->next = buckets[h];
     buckets[h] = temp;
 
-  return false;
+  return true;
 }
 
 // Find a key in the dictionary and return corresponding record or NULL
