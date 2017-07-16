@@ -52,7 +52,7 @@ BinarySearchDictionary::removeMin(){
 	if(n>=0){
 
 		ArrayDictionaryNode min = heap[0];
-		printf("removing %s\n",min.key);
+		//printf("removing %s\n",min.key);
 		n--;
 		if(n==0){
 			return min;
