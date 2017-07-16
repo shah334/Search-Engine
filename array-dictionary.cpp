@@ -51,7 +51,7 @@ ArrayDictionary::findRecord( KeyType key)
 {
         // add your code here
 	for(int i=0;i<currentNumber;i++){
-		if(strcmp(array[i].key,key)==0){
+		if(!strcmp(array[i].key,key)){
 			return array[i].data;
 		}
 	}
