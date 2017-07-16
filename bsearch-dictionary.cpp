@@ -128,7 +128,7 @@ BinarySearchDictionary::sort()
 
 	printf("After\n");
 	for (int i = 0; i < currentNumber; i++) {
-		array[i] = heap[i];
+		array[i] = removeMin();
 		printf("%s\n", array[i].key);
 	}
 }
