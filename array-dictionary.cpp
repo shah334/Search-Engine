@@ -52,7 +52,6 @@ ArrayDictionary::findRecord( KeyType key)
         // add your code here
 	for(int i=0;i<currentNumber;i++){
 		if(strcmp(array[i].key,key)==0){
-			//printf("%d\n",array[i].data);
 			return array[i].data;
 		}
 	}
