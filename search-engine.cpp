@@ -1,7 +1,9 @@
 
 #include <string.h>
 #include "search-engine.h"
-
+#include <vector>
+#include <string>
+using namespace std;
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
@@ -26,15 +28,29 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     return;
   }
 
+  string w = "";
+
+  for(int i=13;i<strlen(documentRequested);i++){
+    if(documentRequested[i]=='+'){
+        w = w + " ";
+    }else{
+        w = w + documentRequested[i];
+    }
+
+  }
+
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
-  //
+  
+
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
   // are common for al the words. Then print the URLs and descriptions
   // in HTML. Make the output look nicer.
 
   // Here the URLs printed are hardwired
+
+
   
   const int nurls=2;
 
@@ -50,7 +66,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     "CS251 Data Structures"
   };
 
-  fprintf( stderr, "Search for words: \"%s\"\n", words);
+  fprintf( stderr, "Search for words: \"%s\"\n", w.c_str());
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
