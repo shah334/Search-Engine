@@ -2,6 +2,8 @@
 #include <string.h>
 #include "search-engine.h"
 #include <vector>
+#include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
 #include <string>
 using namespace std;
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
@@ -39,6 +41,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   }
 
+  vector<string> strs;//vector of words
+  boost::split(strs,w,boost::is_any_of(" "));
+
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
   
@@ -54,7 +59,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   const int nurls=2;
 
-  const char * words = "data structures";
+  const char * words = w.c_str();
+
+
 
   const char * urls[] = {
     "http://www.cs.purdue.edu",
@@ -66,7 +73,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     "CS251 Data Structures"
   };
 
-  fprintf( stderr, "Search for words: \"%s\"\n", w.c_str());
+  fprintf( stderr, "Search for words: \"%s\"\n", words );
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");

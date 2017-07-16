@@ -11,6 +11,9 @@
 ArrayDictionary::ArrayDictionary()
 {
   // Add your code here
+	int maxNumber = 10000;
+	array = new ArrayDictionaryNode[maxNumber];
+	int currentNumber = 0;
 }
 
 // Add a record to the dictionary. Returns false if key already exists
@@ -18,7 +21,24 @@ bool
 ArrayDictionary::addRecord( KeyType key, DataType record)
 {
         // Add your code here
-	
+	for(int i=0;i<currentNumber;i++){
+		if(strcmp(array[i].key,key)==0)
+			return false;
+	}
+
+	if(currentNumber == maxNumber){
+		maxNumber = 2 * maxNumber;
+		ArrayDictionaryNode * arr = new ArrayDictionaryNode[maxNumber];
+		for(int i=0;i<maxNumber/2;i++){
+			arr[i] = array[i];
+		}
+
+		delete [] array;
+		array = arr;
+	}
+	array[currentNumber].key = strdup(key);
+	array[currentNumber].data = record;
+	currentNumber ++;
 	return true;
 }
 
@@ -27,7 +47,11 @@ DataType
 ArrayDictionary::findRecord( KeyType key)
 {
         // add your code here
-
+	for(int i=0;i<currentNumber;i++){
+		if(strcmp(array[i].key,key)==0){
+			return array[i].data;
+		}
+	}
 	return NULL;
 }
 
@@ -36,8 +60,16 @@ bool
 ArrayDictionary::removeElement(KeyType key)
 {
         // Add your code here
-
-	return true;
+	for(int i=0;i<currentNumber;i++){
+		if(!strcmp(array[i].key,key)){
+			for(int j=i+1;j<currentNumber;j++){
+				array[j-1] = array[j];
+			}
+			currentNumber --;
+			return true;//done removing		
+		}
+	}
+	return false;//could not remove
 	
 }
 
@@ -47,5 +79,12 @@ KeyType *
 ArrayDictionary::keys(int * n)
 {
         // Add yoru code here
-	return NULL;
+	 if(currentNumber == 0)
+		return NULL;
+	 KeyType * arr = new KeyType[currentNumber];//this will be returned
+
+	 for(int i=0;i<currentNumber;i++){
+	 	arr[i] = strdup(array[i].key);
+	 }
+	 return arr;
 }
