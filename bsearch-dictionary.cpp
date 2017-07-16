@@ -118,6 +118,7 @@ BinarySearchDictionary::findRecord( KeyType key)
 void
 BinarySearchDictionary::sort()
 {
+	initHeap();
 	printf("Before\n");
 	for (int i = 0; i < currentNumber; i++) {
 		insert(array[i].key,array[i].data);
