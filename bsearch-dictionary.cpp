@@ -16,7 +16,36 @@ void
 BinarySearchDictionary::initHeap(){
 	n = 0;
 	max = maxNumber;
+	heap = new ArrayDictionaryNode[max];
 }
+void 
+BinarySearchDictionary::insert(KeyType key, DataType record){
+	if(n==max){
+		max = max * 2;
+		ArrayDictionaryNode * arr = new ArrayDictionaryNode[max];
+		for(int i=0;i<max/2;i++){
+			arr[i] = heap[i];
+		}
+
+		delete [] heap;
+		heap = arr;
+	}//resize if full
+	heap[n].key = strdup(key);
+	heap[n].data = record;
+	n++;
+	int child = n-1;
+	int parent = iparent(child);
+	while(child > 0){
+		if((strcmp(heap[child].key,heap[parent].key))>0)
+			break;
+
+		ArrayDictionaryNode temp = heap[child];
+		heap[child]=heap[parent];
+		heap[parent]=temp;
+	}
+}
+
+
 bool
 BinarySearchDictionary::addRecord( KeyType key, DataType record) {
 	sorted = false;
