@@ -118,7 +118,7 @@ void test4(Dictionary * dict)
   bool e;
   e = dict->addRecord("Rachael", (void*) 8);
   assert(e);
-  
+
   e = dict->addRecord("Monica", (void*) 9);
   assert(e);
   
