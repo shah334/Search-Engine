@@ -31,6 +31,7 @@ BinarySearchDictionary::insert(KeyType key, DataType record){
 		heap = arr;
 	}//resize if full
 	heap[n].key = strdup(key);
+	printf("Inserting %s\n", heap[n].key);
 	heap[n].data = record;
 	n++;
 	int child = n-1;
