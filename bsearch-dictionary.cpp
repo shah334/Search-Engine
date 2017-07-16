@@ -105,17 +105,19 @@ BinarySearchDictionary::findRecord( KeyType key)
 void
 BinarySearchDictionary::sort()
 {
-	//printf("Before\n");
-	//for (int i = 0; i < currentNumber; i++) {
-	//	printf("%s\n", array[i].key);
-	//}
+	printf("Before\n");
+	for (int i = 0; i < currentNumber; i++) {
+		insert(array[i].key,array[i].data);
+		printf("%s\n", array[i].key);
+	}
 
-        // Add your code here
+        
 
-	//printf("After\n");
-	//for (int i = 0; i < currentNumber; i++) {
-	//	printf("%s\n", array[i].key);
-	//}
+	printf("After\n");
+	for (int i = 0; i < currentNumber; i++) {
+		array[i] = removeMin();
+		printf("%s\n", array[i].key);
+	}
 }
 
 
