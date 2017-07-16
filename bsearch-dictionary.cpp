@@ -41,7 +41,7 @@ BinarySearchDictionary::insert(KeyType key, DataType record){
 			break;
 
 		ArrayDictionaryNode temp = heap[child];
-		printf("swapping %s", temp.key);
+		printf("swapping %s\n", temp.key);
 		heap[child]=heap[parent];
 		heap[parent]=temp;
 	}
