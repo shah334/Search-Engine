@@ -84,6 +84,7 @@ KeyType *
 ArrayDictionary::keys(int * n)
 {
         // Add yoru code here
+
 	 if(currentNumber == 0)
 		return NULL;
 	 KeyType * arr = new KeyType[currentNumber];//this will be returned
@@ -91,5 +92,6 @@ ArrayDictionary::keys(int * n)
 	 for(int i=0;i<currentNumber;i++){
 	 	arr[i] = strdup(array[i].key);
 	 }
+	 *n = currentNumber;
 	 return arr;
 }
