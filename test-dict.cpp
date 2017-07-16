@@ -67,12 +67,10 @@ void test2(Dictionary * dict)
   int grade;
   gradev = dict->findRecord("Rachael");
   grade = (long)gradev;
-  printf("%d\n",grade);
   assert(grade==8);
 
   gradev = dict->findRecord("Monica");
   grade = (long)gradev;
-  printf("%d\n",grade);
   assert(grade==10);
 
   printf("Test2 passed\n");
