@@ -45,6 +45,38 @@ BinarySearchDictionary::insert(KeyType key, DataType record){
 	}
 }
 
+ArrayDictionaryNode
+BinarySearchDictionary::removeMin(){
+	if(n>=0){
+
+		ArrayDictionaryNode min = heap[0];
+		n--;
+		if(n==0){
+			return min;
+		}
+		heap[0] = heap[n];
+		int parent = 0;
+		int left = left_child(parent);
+		int right = right_child(parent);
+
+		while(left<n){
+			int m = left;
+			if(right<n && (strcmp(heap[right].key, heap[left].key) < 0)){
+				m = right;
+			}  
+			if(strcmp(heap[parent].key, heap[m].key)<0){
+				break;
+			}
+			ArrayDictionaryNode temp = heap[m];
+			heap[m] = heap[parent];
+			heap[parent] = temp;
+			parent = m;
+			left = left_child(parent);
+			right = right_child(parent);
+		}
+
+	}
+}
 
 bool
 BinarySearchDictionary::addRecord( KeyType key, DataType record) {

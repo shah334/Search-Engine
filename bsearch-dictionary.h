@@ -21,7 +21,7 @@ public:
 
   
   bool addRecord( KeyType key, DataType record);
-  KeyType removeMin();
+  ArrayDictionaryNode removeMin();
   #define left_child(i) (2*(i) + 1);
   #define right_child(i) (2*(i) + 2);
   #define iparent(i) ((i-1)/2);
