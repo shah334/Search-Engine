@@ -30,6 +30,7 @@ ArrayDictionary::addRecord( KeyType key, DataType record)
 	}
 
 	if(currentNumber == maxNumber){
+		printf("Current %d    Max %d\n", currentNumber, maxNumber );
 		maxNumber = 2 * maxNumber;
 		ArrayDictionaryNode * arr = new ArrayDictionaryNode[maxNumber];
 		for(int i=0;i<maxNumber/2;i++){
