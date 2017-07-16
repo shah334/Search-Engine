@@ -12,75 +12,6 @@ BinarySearchDictionary::BinarySearchDictionary()
 {
 	sorted = false;
 }
-void
-BinarySearchDictionary::initHeap(){
-	n = 0;
-	max = currentNumber;
-	heap = new ArrayDictionaryNode[max];
-}
-void 
-BinarySearchDictionary::insert(KeyType key, DataType record){
-	if(n==max){
-		max = max * 2;
-		ArrayDictionaryNode * arr = new ArrayDictionaryNode[max];
-		for(int i=0;i<max/2;i++){
-			arr[i] = heap[i];
-		}
-
-		delete [] heap;
-		heap = arr;
-	}//resize if full
-	heap[n].key = strdup(key);
-	//printf("Inserting %s\n", heap[n].key);
-	heap[n].data = record;
-	n++;
-	int child = n-1;
-	int parent = iparent(child);
-	while(child > 0){
-		if((strcmp(heap[child].key,heap[parent].key))>0)
-			break;
-
-		ArrayDictionaryNode temp = heap[child];
-		//printf("swapping %s\n", temp.key);
-		heap[child]=heap[parent];
-		heap[parent]=temp;
-	}
-}
-
-ArrayDictionaryNode
-BinarySearchDictionary::removeMin(){
-	if(n>=0){
-
-		ArrayDictionaryNode min = heap[0];
-		//printf("removing %s\n",min.key);
-		n--;
-		if(n==0){
-			return min;
-		}
-		heap[0] = heap[n];
-		int parent = 0;
-		int left = left_child(parent);
-		int right = right_child(parent);
-
-		while(left<n){
-			int m = left;
-			if(right<n && (strcmp(heap[right].key, heap[left].key) < 0)){
-				m = right;
-			}  
-			if(strcmp(heap[parent].key, heap[m].key)<0){
-				break;
-			}
-			ArrayDictionaryNode temp = heap[m];
-			heap[m] = heap[parent];
-			heap[parent] = temp;
-			parent = m;
-			left = left_child(parent);
-			right = right_child(parent);
-		}
-		return min;
-	}
-}
-
 bool
 BinarySearchDictionary::addRecord( KeyType key, DataType record) {
 	sorted = false;
@@ -118,6 +49,7 @@ BinarySearchDictionary::findRecord( KeyType key)
 void
 BinarySearchDictionary::sort()
 {
+	/**
 	initHeap();
 	printf("Before\n");
 	for (int i = 0; i < currentNumber; i++) {
@@ -132,7 +64,7 @@ BinarySearchDictionary::sort()
 		array[i] = removeMin();
 
 		printf("%s\n", removeMin().key);
-	}
+	}*/
 }
 
 
