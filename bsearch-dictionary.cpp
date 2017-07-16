@@ -92,9 +92,19 @@ BinarySearchDictionary::findRecord( KeyType key)
 		sort();
 		sorted = true;
 	}
-	
+	int l = 0;
+	int u = currentNumber - 1;
+	while(l<=u){
+		int mid = (l+u)/2;
+		if(strcmp(key,array[mid].key)<0)
+			u = mid - 1;
+		else if(strcmp(key,array[mid].key)>0)
+			l = mid + 1;
+		else
+			return array[mid].data;
+	}
 	// Use binary search
-
+	return NULL;
 	// Add your implementation here
 
 	return NULL;
