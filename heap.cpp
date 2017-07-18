@@ -20,10 +20,13 @@ Heap::insert(ArrayDictionaryNode node){
 		if(strcmp(array[child].key,array[parent].key)>0){
 			break;
 		}
+
+		ArrayDictionaryNode temp = array[child];
+		array[child] = array[parent];
+		array[parent] = temp;
+		child = parent;
+		parent = iparent(child);
 	}
-	ArrayDictionaryNode temp = array[child];
-	array[child] = array[parent];
-	array[parent] = temp;
 }
 
 ArrayDictionaryNode
