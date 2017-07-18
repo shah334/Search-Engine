@@ -1,4 +1,5 @@
 #include "heap.h"
+#include "array-dictionary.h"
 
 Heap::Heap(int maxSize){
 	n = 0;
@@ -47,8 +48,8 @@ Heap::removeMin(){
 		if(strcmp(array[parent].key,array[minChild].key)<0){
 			break;
 		}
-		ArrayDictionaryNode node = array[child];
-		array[child] = array[minChild];
+		ArrayDictionaryNode node = array[parent];
+		array[parent] = array[minChild];
 		array[minChild] = node;
 		parent = minChild;
 		left = left_child(parent);

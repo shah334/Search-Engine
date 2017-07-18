@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "array-dictionary.h"
+#include <string.h>
+#include <assert.h>
 
 class Heap : public ArrayDictionary {
 	public:
@@ -9,7 +11,7 @@ class Heap : public ArrayDictionary {
 	ArrayDictionaryNode * arrray;
 	Heap(int maxSize);
 	void insert(ArrayDictionaryNode node);
-	ArrayDictionaryNode remove();
+	ArrayDictionaryNode removeMin();
 	~Heap();
 
 };
