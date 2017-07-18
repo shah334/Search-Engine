@@ -15,17 +15,7 @@ class BinarySearchDictionary : public ArrayDictionary {
 public:
   // Constructor
   BinarySearchDictionary();
-
-  void initHeap();
-  void insert(KeyType key, DataType record);
-
-  
   bool addRecord( KeyType key, DataType record);
-  ArrayDictionaryNode removeMin();
-  #define left_child(i) (2*(i) + 1);
-  #define right_child(i) (2*(i) + 2);
-  #define iparent(i) ((i-1)/2);
-
   // Find a key in the dictionary and return corresponding record or NULL
   // Use binary search
   DataType findRecord( KeyType key);
