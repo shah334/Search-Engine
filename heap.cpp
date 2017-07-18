@@ -1,17 +1,17 @@
 #include "heap.h"
 
-heap::Heap(int maxSize){
+Heap::Heap(int maxSize){
 	n = 0;
 	nMax = maxSize;
 	array = new ArrayDictionaryNode[maxSize];
 }
 
-heap::~Heap(){
+Heap::~Heap(){
 	delete [] array;
 }
 
 void
-heap::insert(ArrayDictionaryNode node){
+Heap::insert(ArrayDictionaryNode node){
 	assert(n<nMax);
 	array[n] = node;
 	n++;
@@ -28,7 +28,7 @@ heap::insert(ArrayDictionaryNode node){
 }
 
 ArrayDictionaryNode
-heap::removeMin(){
+Heap::removeMin(){
 	assert(n>0);
 	ArrayDictionaryNode node = array[0];
 	n--;
