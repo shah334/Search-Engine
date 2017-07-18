@@ -25,6 +25,10 @@ minihttpd.o: minihttpd.cpp minihttpd.h
 	g++ -g -c minihttpd.cpp
 
 # Build dictionaries
+
+hash.o: hash.h hash.cpp
+	g++ -g -c hash.cpp
+
 array-dictionary.o: array-dictionary.h array-dictionary.cpp
 	g++ -g -c array-dictionary.cpp
 
