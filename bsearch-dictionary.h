@@ -3,6 +3,7 @@
 // The class inherits from ArrayDictionary
 
 #include "array-dictionary.h"
+#include "heap.h"
 
 class BinarySearchDictionary : public ArrayDictionary {
   // Add any member variables you need
