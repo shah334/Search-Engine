@@ -6,13 +6,13 @@ search-engine: search-engine.o minihttpd.o array-dictionary.o \
 	hash-dictionary.o avl-dictionary.o avl-dictionary2.o bsearch-dictionary.o  
 	g++ -g -o search-engine search-engine.o minihttpd.o \
 		  array-dictionary.o hash-dictionary.o avl-dictionary.o avl-dictionary2.o\
-		  bsearch-dictionary.o
+		  bsearch-dictionary.o heap.o
 
 test-dict: test-dict.cpp array-dictionary.o \
 	hash-dictionary.o avl-dictionary.o avl-dictionary2.o bsearch-dictionary.o 
 	g++ -g -o test-dict test-dict.cpp \
 		  array-dictionary.o hash-dictionary.o avl-dictionary.o avl-dictionary2.o \
-		  bsearch-dictionary.o
+		  bsearch-dictionary.o heap.o
 
 test-avl: test-avl.cpp avl-dictionary.o avl-dictionary2.o
 	g++ -g -o test-avl test-avl.cpp avl-dictionary.o avl-dictionary2.o

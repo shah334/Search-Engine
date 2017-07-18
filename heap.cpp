@@ -1,6 +1,4 @@
 #include "heap.h"
-#include "array-dictionary.h"
-
 Heap::Heap(int maxSize){
 	n = 0;
 	nMax = maxSize;

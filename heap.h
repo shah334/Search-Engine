@@ -5,10 +5,10 @@
 #include <assert.h>
 
 class Heap : public ArrayDictionary {
-	public:
+public:
 	int n;
 	int nMax;
-	ArrayDictionaryNode * arrray;
+	ArrayDictionaryNode * array;
 	Heap(int maxSize);
 	void insert(ArrayDictionaryNode node);
 	ArrayDictionaryNode removeMin();

@@ -4,14 +4,9 @@
 
 #include "array-dictionary.h"
 #include "heap.h"
-
 class BinarySearchDictionary : public ArrayDictionary {
   // Add any member variables you need
   //for heap
-  int n;
-  int max;
-  ArrayDictionaryNode * heap;
-
   bool sorted;
 public:
   // Constructor
