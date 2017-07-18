@@ -18,7 +18,7 @@ heap::insert(ArrayDictionaryNode node){
 	int child = n-1;
 	int parent = iparent(child);
 	while(child>0){
-		if(array[child]>array[parent]){
+		if(strcmp(array[child].key,array[parent].key)>0){
 			break;
 		}
 	}
@@ -41,10 +41,10 @@ heap::removeMin(){
 	int right = right_child(parent);
 	while(left<n){
 		int minChild = left;
-		if(right<n && array[right]<array[left]){
+		if(right<n && strcmp(array[right].key,array[left].key)<0){
 			minChild = right;
 		}
-		if(array[parent]<array[minChild]){
+		if(strcmp(array[parent].key,array[minChild].key)<0){
 			break;
 		}
 		ArrayDictionaryNode node = array[child];
