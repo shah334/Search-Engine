@@ -10,7 +10,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
   // Create dictionary of the indicated type
-
+  	printf("hi\n");
   // Populate dictionary and sort it if necessary
 }
 
@@ -20,7 +20,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
-    fprintf(fout, "<CENTER><H1><em>Boiler Search</em></H1>\n");
+    fprintf(fout, "<CENTER><H1><em>Parshwa's Search Engine</em></H1>\n");
     fprintf(fout, "<H2>\n");
     fprintf(fout, "<FORM ACTION=\"search\">\n");
     fprintf(fout, "Search:\n");
@@ -46,7 +46,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
-  
+
 
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
@@ -55,8 +55,6 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   // Here the URLs printed are hardwired
 
-
-  
   const int nurls=2;
 
   const char * words = w.c_str();
@@ -134,9 +132,9 @@ int main(int argc, char ** argv)
     printUsage();
     return 0;
   }
-  
+
   SearchEngine httpd(port, dictionaryType);
-  
+
   httpd.run();
 
   return 0;
