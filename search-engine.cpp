@@ -108,9 +108,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  URLRecord n = _urlArray[_index];
 			  
 		  }
-		  const char * word = w.c_str();
-		  printf("WORD: %s\n",word);
+		  
 	  }
+	  const char * word = w.c_str();
+		  printf("WORD: %s\n",word);
   }
 
 
