@@ -34,6 +34,34 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  default:
 	  return;
   }
+  
+  ifstream f1("url.txt");
+  
+  string st;
+  int k=0;
+  while(getline(f1,st)){
+	  k++;
+	  if(k%2!=0){
+		  int index;
+		  string ind = "";
+		  string url = "";
+		  for(int i=0;i<st.length();i++){
+			  if(st[i]!=' '){
+				  ind = ind + st[i];
+		  		}else{
+			  for(int j=i+1;j<st.length();j++){
+				  url = url + st[j];
+			  }
+		  }
+		  index = atoi(ind.c_str());
+		  printf("Index %d, URL: %s\n\n",index,url.c_str());
+	  	}
+	  }else{
+		  string desc = st;
+		  printf("Description : %s",desc.c_str());
+	  }
+  }
+  
   ifstream f("word.txt");
   string s;
   string w = "";
@@ -42,7 +70,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  //printf("\n\n");
 	  for(int i=0;i<s.length();i++){
 		  if(s[i]!=' '){
-			  w = w + s[i];
+			  w = w + s[i];//store the words
 		  }
 		  else{
 			  printf("Word %s\n\n", w.c_str());
