@@ -39,6 +39,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   ifstream f1("url.txt");
   string st;
   int k=0;
+  const char * UR;
+  const char * d;
   int in = 0;
   while(getline(f1,st)){
 	  k++;
@@ -56,16 +58,18 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  }
 		  }
 	  	}
+	  	UR = url.c_str();
 	  	index = atoi(ind.c_str());
 		//printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else if(k%3==2){
 		  desc = st;
+		  d=desc.c_str();
 		 // printf("Description : %s\n\n",desc.c_str());
 	  } else{//store if blank
 		  if(k!=0){
-		 printf("%s\n",url.c_str());
-		  _urlArray[in]._url = strdup(url.c_str());
-		  _urlArray[in]._description = strdup(desc.c_str());
+		 printf("%s\n",UR);
+		  _urlArray[in]._url = strdup(UR);
+		  _urlArray[in]._description = strdup(d);
 		  in++;
 		  /*if(in == maxSize){
 			  maxSize = maxSize * 2;
