@@ -106,9 +106,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  _index = atoi(_ind.c_str());//get the numerical value
 			  _ind = "";//for next numbers
 			  URLRecord n = _urlArray[_index];
-			  const char * word = w.c_str();
-			  printf("WORD: %s\n",word);
+			  
 		  }
+		  const char * word = w.c_str();
+		  printf("WORD: %s\n",word);
 	  }
   }
 
