@@ -95,7 +95,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 		  else{
 			  _index = atoi(_ind.c_str());//get the numerical value
-			 printf("%d ",_index);
+			 _ind = "";
+			 printf("%d\n",_index);
 			 URLRecordList * e = new URLRecordList();
 			  if(head==NULL){
 				  head = e;
@@ -113,7 +114,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  }
 	  URLRecordList * t = head;
 	  while(t!=NULL){
-		  printf("%s\n",t->_urlRecord->_url);
+		 // printf("%s\n",t->_urlRecord->_url);
 		  t=t->_next;
 	  }
 	  //printf("\n");
