@@ -219,15 +219,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 		countURLs ++;
 		t=t->_next;
   	}
-  }else{
-  for(int i =0;i<county;i++){
-	  if(indexes[i]==-999){
-		  fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", countURLs, arr[i]._url, arr[i]._url );
-		  fprintf( fout, "<blockquote>%s<p></blockquote>\n", arr[i]._description );
-		  countURLs++;
-	  }
-  	}
   }
+  
   
   
 
