@@ -40,7 +40,6 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   string st;
   int k=0;
   const char * UR;
-  const char * t;
   const char * d;
   int in = 0;
   while(getline(f1,st)){
@@ -62,29 +61,18 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  	}
 	  	UR = url.c_str();
 	  	index = atoi(ind.c_str());
-	  	if(index == 213){
-	  		printf("%s\n",UR);
-	  		t = UR;
-	  	}
+
 	  } 
 	  if(k%3==2){
 		  desc = st;
 		  d=strdup(st.c_str());
-		  if(index == 213)
-		  	printf("%s\n",d);
 	  } 
 	  if(k%3==0)
 	  {//store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
-		 	 
-		 	 if(index==213){
-			 	// t=UR;
-		 	 printf("%s\n",t);
 		 	 printf("%s\n",_urlArray[in]._url);
-		 	 }
 		 	 _urlArray[in]._description = strdup(d);
-		 	 if(index==213)
 		 	 printf("%s\n",_urlArray[in]._description);
 		 	 in++;/*
 		 		 if(in == maxSize){
