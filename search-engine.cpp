@@ -43,48 +43,25 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   const char * d;
   int in = 0;
   while(getline(f1,st)){
-	  k++;
-	  string ind = "";
-	  string url = "";
-	  string desc;
-	  int index;
-	  if(k%3==1){
-		  
-		  for(int i=0;i<st.length();i++){
-			  if(st[i]!=' '){
-				  ind = ind + st[i];
-		  		}else{
-			  for(int j=i+1;j<st.length();j++){
-				  url = url + st[j];
-			  }
-		  }
-	  	}
-	  	UR = url.c_str();
-	  	index = atoi(ind.c_str());
-
-	  } 
-	  if(k%3==2){
-		  desc = st;
-		  d=strdup(st.c_str());
-	  } 
-	  if(k%3==0)
-	  {//store if blank
-		  if(k!=0){
-			  if(index==213){
-				  printf("%s\n",UR);
-			  }
-		 	 _urlArray[in]._url = strdup(UR);
-		 	 	if(index==213){
-				  printf("%s\n",UR);
-			  }
-		 	// printf("%s\n",_urlArray[in]._url);
-		 	 UR = "";
-		 	 _urlArray[in]._description = strdup(d);
-		 	 d = "";
-		 	// printf("%s\n",_urlArray[in]._description);
-		 	 in++;
-		  }
-	  }
+	 int sp;
+	 for(int i=0;i<st.length();i++){
+		 if(i==' '){
+			 sp = i;
+		 }
+	 }
+	 string w = "";
+	 for(int i=sp+1;i<st.length();i++){
+		 w = w+st[i];
+	 }
+	 UR = w.c_str();
+	 getline(f1,st);
+	 d = st.c_str();
+	 getline(f1,st);
+	 _urlArray[k]._url = strdup(UR);
+	 printf("%s\n",_urlArray[k]._url);
+	 _urlArray[k]._description = strdup(d);
+	 printf("%s\n",_urlArray[k]._description);
+	 k++;
   }
 
   ifstream f("word.txt");
