@@ -111,7 +111,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	  }
 	  const char * word = w.c_str();
-	  printf("WORD: %s\n",word);
+	  //printf("WORD: %s\n",word);
   }
 
 
