@@ -60,17 +60,14 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  	}
 	  	UR = url.c_str();
 	  	index = atoi(ind.c_str());
-		//printf("Index %d, URL: %s\n\n",index,url.c_str());
-	  }else if(k%3==2){
+	  } else if(k%3==2){
 		  desc = st;
 		  d=strdup(st.c_str());
-		  //printf("Description : %s\n\n",d);
 	  } else{//store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
 		 	 printf("%s\n", _urlArray[in]._url);
 		 	 _urlArray[in]._description = strdup(d);
-		 	 //printf("%s\n\n", _urlArray[in]._description);
 		 	 in++;
 		 		 if(in == maxSize){
 		 		 	maxSize = maxSize * 2;
