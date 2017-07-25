@@ -149,7 +149,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
   URLRecordList * head;
-  int arr[10000];
+  int arr[10000] ;
+  for(int i=0;i<10000;i++){
+    arr[i] = 0;
+  }
   int counter = 0;
   URLRecord * _u = new URLRecord[10000];
   for(int i=0;i<strs.size();i++){
