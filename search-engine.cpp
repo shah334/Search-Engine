@@ -110,6 +110,11 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 
 	   }
+	   URLRecordList * l = head;
+	   while(l!=NULL){
+		   printf("%s\n",l->_urlRecord->_url);
+		   l = l->_next;
+	   }
 	 bool flag = _wordToURLList->addRecord(word,(URLRecordList*)head);//ADDED!
 	}
 
