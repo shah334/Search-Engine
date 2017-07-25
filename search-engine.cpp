@@ -53,9 +53,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 				  url = url + st[j];
 			  }
 		  }
-		  index = atoi(ind.c_str());
-		  printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  	}
+	  	index = atoi(ind.c_str());
+		  printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else{
 		  string desc = st;
 		  printf("Description : %s",desc.c_str());
