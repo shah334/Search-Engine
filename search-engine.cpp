@@ -49,7 +49,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 		  
 		  printf("Word %s\n\n", w.c_str());
-		  
+		  w = "";
 	  }
 	  
   }
