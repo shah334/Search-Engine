@@ -63,10 +63,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  } else if(k%3==2){
 		  desc = st;
 		  d=strdup(st.c_str());
-	  } else{//store if blank
+	  } 
+	  //store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
-		 	 printf("%s\n", _urlArray[in]._url);
 		 	 _urlArray[in]._description = strdup(d);
 		 	 in++;
 		 		 if(in == maxSize){
@@ -82,7 +82,6 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  			_urlArray = n;
 			  }
 		  }
-	  }
   }
 
   ifstream f("word.txt");
