@@ -34,7 +34,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  default:
 	  return;
   }
-  ifstream f("word.txt");
+  ifstream f("url.txt");
   string s;
   string w = "";
   while(getline(f,s)){
