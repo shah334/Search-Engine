@@ -66,6 +66,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  } else{//store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
+		 	 printf("%s\n",_urlArray[in]._url);
 		 	 _urlArray[in]._description = strdup(d);
 		 	 in++;
 		 		 if(in == maxSize){
@@ -113,8 +114,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  _index = atoi(_ind.c_str());//get the numerical value
 			 // printf("%d\n",_index);
 			  _ind = "";//for next numbers
+			  
 			  URLRecord n = _urlArray[_index];
-			 // printf("%s\n",n._url);
 		  }
 
 	  }
