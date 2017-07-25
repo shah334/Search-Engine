@@ -106,7 +106,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 				  prev->_next = e;
 			  }
 			  prev = e;
-			   printf("%s\n",prev->_urlRecord->_url);
+			  // printf("%s\n",prev->_urlRecord->_url);
 			 // list = list->_next;
 		  }
 
