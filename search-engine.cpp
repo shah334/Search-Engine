@@ -62,6 +62,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  desc = st;
 		 // printf("Description : %s\n\n",desc.c_str());
 	  } else{//store if blank
+		  printf("%s\n",url.c_str());
 		  _urlArray[in]._url = strdup(url.c_str());
 		  _urlArray[in]._description = strdup(desc.c_str());
 		  in++;
@@ -98,7 +99,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	  }
 	  const char * word = w.c_str();
-	  printf("WORD: %s\n",word);
+	  //printf("WORD: %s\n",word);
 	  int _index;
 	  string _ind="";
 	  for(int i=sp+1;i<s.length();i++){
@@ -114,7 +115,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			 }
 			  _ind = "";//for next numbers
 			  URLRecord n = _urlArray[_index];
-			  printf("%s\n",n._url);
+			 // printf("%s\n",n._url);
 		  }
 
 	  }
