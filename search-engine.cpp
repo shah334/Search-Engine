@@ -114,6 +114,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  URLRecordList * t = head;
 	  while(t!=NULL){
 		  printf("%s\n",t->_urlRecord->_url);
+		  t=t->_next;
 	  }
 	  //printf("\n");
 	  
