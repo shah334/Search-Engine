@@ -56,6 +56,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	 UR = w.c_str();
 	 getline(f1,st);
 	 d = st.c_str();
+	 printf("%s\n",st.c_str());
 	 getline(f1,st);
 	 _urlArray[k]._url = strdup(UR);
 	 printf("%s\n",_urlArray[k]._url);
