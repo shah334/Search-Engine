@@ -45,7 +45,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   while(getline(f1,st)){
 	 int sp;
 	 for(int i=0;i<st.length();i++){
-		 if(i==' '){
+		 if(st[i]==' '){
 			 sp = i;
 		 }
 	 }
