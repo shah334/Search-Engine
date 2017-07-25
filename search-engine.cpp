@@ -7,7 +7,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
-#define BILLION  1000000000L;
+#define BILLION 1000000000L;
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
@@ -121,7 +121,7 @@ void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
   struct timespec start, stop;
-  double accum;
+  long accum;
   if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
@@ -182,9 +182,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
       }
   }
   clock_gettime( CLOCK_REALTIME, &stop);
-  accum = (( stop.tv_nsec - start.tv_nsec ))*1.0;
-  printf( "%f\n", accum );
-  printf( "%d\n", stop.tv_sec - start.tv_sec);
+  accum = (( stop.tv_nsec - start.tv_nsec ));
+  printf( "%d\n", accum );
+  //printf( "%d\n", stop.tv_sec - start.tv_sec);
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
   // are common for al the words. Then print the URLs and descriptions
@@ -212,7 +212,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Parshwa's Search Engine</em></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", words );
+  fprintf( fout, "<H2> Search Results for \"%s\", time elapsed is \"%d\" nanoseconds</center></H2>\n", words, accum );
 
   /*
   for ( int i = 0; i < nurls; i++ ) {
