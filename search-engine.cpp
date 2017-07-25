@@ -96,6 +96,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 
 	  }
+	  const char * word = w.c_str();
+	  printf("WORD: %s\n",word);
 	  int _index;
 	  string _ind="";
 	  for(int i=sp+1;i<s.length();i++){
@@ -110,8 +112,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 
 	  }
-	  const char * word = w.c_str();
-	  printf("WORD: %s\n",word);
+	  
   }
 
 
