@@ -38,8 +38,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   string s;
   string w = "";
   while(getline(f,s)){
-	  //printf("%s",s.c_str());
-	  //printf("\n\n");
+	  printf("%s",s.c_str());
+	  printf("\n\n");
 	  for(int i=0;i<s.length();i++){
 		  if(s[i]!=' '){
 			  w = w + s[i];
