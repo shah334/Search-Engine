@@ -182,9 +182,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
       }
   }
   clock_gettime( CLOCK_REALTIME, &stop);
-  accum = (( stop.tv_sec - start.tv_sec )
-          + ( stop.tv_nsec - start.tv_nsec ))*1.0/BILLION;
+  accum = (( stop.tv_nsec - start.tv_nsec ))*1.0/BILLION;
   printf( "%f\n", accum );
+  printf( "%d\n", stop.tv_sec - start.tv_sec);
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
   // are common for al the words. Then print the URLs and descriptions
