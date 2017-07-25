@@ -63,7 +63,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		//printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else if(k%3==2){
 		  desc = st;
-		  d=st.c_str();
+		  d=strdup(st.c_str());
 		  printf("Description : %s\n\n",d);
 	  } else{//store if blank
 		  if(k!=0){
