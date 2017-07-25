@@ -77,7 +77,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		 	 _urlArray[in]._url = strdup(UR);
 		 	 
 		 	 if(index==213){
-			 	 //t=UR;
+			 	 t=UR;
 		 	 printf("%s\n",t);
 		 	 printf("%s\n",_urlArray[in]._url);
 		 	 }
