@@ -102,9 +102,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  }
 			  e->_urlRecord = &_urlArray[_index];
 			  e->_next = NULL;
-			  while(previous!=NULL){
+			  if(previous!=NULL){
 				  previous->_next = e;
-			  }
+			  }else
 			  previous = e;
 			  // printf("%s\n",prev->_urlRecord->_url);
 			 // list = list->_next;
