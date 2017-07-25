@@ -158,7 +158,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
       URLRecordList * temp = head;
       while(temp!=NULL){
         _u[counter] = *temp->_urlRecord;
-        arr[counter] = 1;
+        arr[counter]++;
         temp = temp->_next;
         counter ++;
       }
@@ -167,8 +167,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
       while(temp!=NULL){
         for(int j=0;j<counter;j++){
           if(!(strcmp(temp->_urlRecord->_url,_u[j]._url))){
-              arr[j] = -1;
-              //break;
+              arr[j]++;
+              break;
             }
           }
           temp = temp ->_next;
@@ -222,7 +222,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   */
 
   for(int i=0;i<counter;i++){
-    if(arr[i]==-1){
+    if(arr[i]==strs.size()){
       fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, _u[i]._url, _u[i]._url );
       fprintf( fout, "<blockquote>%s<p></blockquote>\n", _u[i]._description );
     }
