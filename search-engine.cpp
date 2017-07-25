@@ -61,7 +61,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  	}
 	  	UR = url.c_str();
 	  	index = atoi(ind.c_str());
-	  	if(index == 123)
+	  	if(index == 213)
 	  		printf("%s\n",UR);
 	  } else if(k%3==2){
 		  desc = st;
