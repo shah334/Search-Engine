@@ -112,7 +112,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 
 	   }
-	 bool flag = _wordToURLList->addRecord(word,(URLRecordList*)head);
+	 bool flag = _wordToURLList->addRecord(word,(URLRecordList*)head);//ADDED!
 	}
 
 
@@ -150,7 +150,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
 
-
+  for(int i=0;i<strs.size();i++){
+	  printf("%s\n",strs[i].c_str());
+  }
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
   // are common for al the words. Then print the URLs and descriptions
