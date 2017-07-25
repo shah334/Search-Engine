@@ -86,7 +86,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  int _index;
 	  string _ind="";
 	  URLRecordList * list;
-	  list->_next = NULL;
+	  //list->_next = NULL;
 	  for(int i=sp+1;i<s.length();i++){
 		  if(s[i]!=' '){
 			  _ind = _ind + s[i];//store the number
@@ -98,7 +98,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  URLRecord * n = &_urlArray[_index];
 			  list->_urlRecord = n;
 			   printf("%s\n",list->_urlRecord->_url);
-			  list = list->_next;
+			 // list = list->_next;
 		  }
 
 	  }
