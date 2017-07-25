@@ -194,6 +194,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", countURLs, t->_urlRecord->_url, t->_urlRecord->_url );
     fprintf( fout, "<blockquote>%s<p></blockquote>\n", t->_urlRecord->_description );
   	countURLs ++;
+  	t=t->_next;
     }
   
   
