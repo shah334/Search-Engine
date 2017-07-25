@@ -101,8 +101,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  	list->_urlRecord = n;
 			  }else{
 				  list->_next->_urlRecord = n;
+				  list = list->_next;
 			  }
-			  list = list->_next;
+			  
 			   printf("%s\n",list->_urlRecord->_url);
 			 // list = list->_next;
 		  }
