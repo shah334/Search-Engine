@@ -149,9 +149,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
-
+  URLRecordList * head;
   for(int i=0;i<strs.size();i++){
-	  printf("%s\n",strs[i].c_str());
+	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());//get the data
   }
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
@@ -182,10 +182,21 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", words );
 
+  /*
   for ( int i = 0; i < nurls; i++ ) {
     fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, urls[i], urls[i] );
     fprintf( fout, "<blockquote>%s<p></blockquote>\n", description[i] );
-  }
+  }*/
+  
+  URLRecordList * t = head;
+  int countURLs = 1;
+  while(t!=NULL){
+	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", countURLs, t->_urlRecord->_url, t->_urlRecord->_url );
+    fprintf( fout, "<blockquote>%s<p></blockquote>\n", t->_urlRecord->_description );
+  	countURLs ++;
+    }
+  
+  
 
   // Add search form at the end
   fprintf(fout, "<HR><H2>\n");
