@@ -119,6 +119,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
+
   if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
@@ -155,6 +156,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   }
   int counter = 0;
   URLRecord * _u = new URLRecord[10000];
+  
   for(int i=0;i<strs.size();i++){
 	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());
     if(i==0){//if the first word is searched, store all urls else cross them off if theyre not intersections
@@ -171,7 +173,6 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
         for(int j=0;j<counter;j++){
           if(!(strcmp(temp->_urlRecord->_url,_u[j]._url))){
               arr[j]++;
-              //break;
             }
           }
           temp = temp ->_next;
@@ -205,7 +206,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   fprintf( stderr, "Search for words: \"%s\"\n", words );
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
-  fprintf( fout, "<H1> <Center><em>Boiler Search</em></H1>\n");
+  fprintf( fout, "<H1> <Center><em>Parshwa's Search Engine</em></H1>\n");
   fprintf( fout, "<H2> Search Results for \"%s\"</center></H2>\n", words );
 
   /*
