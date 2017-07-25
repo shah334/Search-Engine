@@ -75,7 +75,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  w = w + s[i];//store the words
 		  }
 		  else{
-			 // printf("Word %s\n\n", w.c_str());
+			 printf("Word %s\n\n", w.c_str());
 			  sp = i;
 			  break;
 		  }
@@ -85,6 +85,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  //printf("WORD: %s\n",word);
 	  int _index;
 	  string _ind="";
+	  URLRecordList * list;
 	  for(int i=sp+1;i<s.length();i++){
 		  if(s[i]!=' '){
 			  _ind = _ind + s[i];//store the number
@@ -93,7 +94,6 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  _index = atoi(_ind.c_str());//get the numerical value
 			 // printf("%d\n",_index);
 			  _ind = "";//for next numbers
-			  URLRecordList * list;
 			  URLRecord * n = &_urlArray[_index];
 			  list->_urlRecord = n;
 			  list->_next = NULL;
@@ -101,7 +101,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	  }
 	  
-  }
+	}
 
 
 }
