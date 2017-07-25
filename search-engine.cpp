@@ -7,6 +7,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
+#define BILLION  1000000000L;
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
@@ -120,6 +121,7 @@ void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
   struct timespec start, stop;
+  double accum;
   if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
@@ -156,7 +158,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   }
   int counter = 0;
   URLRecord * _u = new URLRecord[10000];
-
+  clock_gettime( CLOCK_REALTIME, &start);
   for(int i=0;i<strs.size();i++){
 	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());
     if(i==0){//if the first word is searched, store all urls else cross them off if theyre not intersections
@@ -179,7 +181,11 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
         }
       }
   }
-  
+  clock_gettime( CLOCK_REALTIME, &stop);
+  accum = ( stop.tv_sec - start.tv_sec )
+          + ( stop.tv_nsec - start.tv_nsec )
+            / BILLION;
+  printf( "%lf\n", accum );
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
   // are common for al the words. Then print the URLs and descriptions
