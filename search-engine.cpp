@@ -114,7 +114,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			 // printf("%d\n",_index);
 			  _ind = "";//for next numbers
 			  URLRecord n = _urlArray[_index];
-			  printf("%s\n",n._url);
+			 // printf("%s\n",n._url);
 		  }
 
 	  }
