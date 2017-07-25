@@ -58,7 +58,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else{
 		  string desc = st;
-		  printf("Description : %s",desc.c_str());
+		  printf("Description : %s\n\n",desc.c_str());
 	  }
   }
   
