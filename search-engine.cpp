@@ -70,12 +70,18 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  if(k%3==0)
 	  {//store if blank
 		  if(k!=0){
+			  if(index==213){
+				  printf("%s\n",UR);
+			  }
 		 	 _urlArray[in]._url = strdup(UR);
-		 	 printf("%s\n",_urlArray[in]._url);
+		 	 	if(index==213){
+				  printf("%s\n",UR);
+			  }
+		 	// printf("%s\n",_urlArray[in]._url);
 		 	 UR = "";
 		 	 _urlArray[in]._description = strdup(d);
 		 	 d = "";
-		 	 printf("%s\n",_urlArray[in]._description);
+		 	// printf("%s\n",_urlArray[in]._description);
 		 	 in++;
 		  }
 	  }
