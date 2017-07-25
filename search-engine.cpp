@@ -74,8 +74,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  {//store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
+		 	 if(k==213)
 		 	 printf("%s\n",_urlArray[in]._url);
 		 	 _urlArray[in]._description = strdup(d);
+		 	if(k==213)
 		 	 printf("%s\n",_urlArray[in]._description);
 		 	 in++;/*
 		 		 if(in == maxSize){
