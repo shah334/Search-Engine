@@ -183,7 +183,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   }
   clock_gettime( CLOCK_REALTIME, &stop);
   accum = (( stop.tv_nsec - start.tv_nsec ));
-  printf( "%d\n", accum );
+  printf( "%ld\n", accum );
   //printf( "%d\n", stop.tv_sec - start.tv_sec);
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
@@ -212,7 +212,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Parshwa's Search Engine</em></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\", time elapsed is \"%d\" nanoseconds</center></H2>\n", words, accum );
+  fprintf( fout, "<H2> Search Results for \"%s\", time elapsed is \"%ld\" nanoseconds</center></H2>\n", words, accum );
 
   /*
   for ( int i = 0; i < nurls; i++ ) {
