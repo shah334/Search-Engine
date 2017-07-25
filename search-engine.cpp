@@ -64,7 +64,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  }else if(k%3==2){
 		  desc = st;
 		  d=st.c_str();
-		 //printf("Description : %s\n\n",st.c_str());
+		  printf("Description : %s\n\n",d);
 	  } else{//store if blank
 		  if(k!=0){
 		 //printf("%s\n",UR);
