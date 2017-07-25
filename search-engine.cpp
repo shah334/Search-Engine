@@ -148,32 +148,9 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
-  int county = 0;
-  URLRecord * arr = new URLRecord[100];
   URLRecordList * head;
-  
-  int indexes[100];
-  for(int i=0;i<100;i++){
-	  indexes[i] = -1;
-  }
   for(int i=0;i<strs.size();i++){
 	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());//get the data
-	  URLRecordList * temp = head;
-	  while(temp!=NULL){
-		  if(i==0){
-		  arr[county]._url = strdup(temp->_urlRecord->_url);
-		  arr[county]._description = strdup(temp->_urlRecord->_description);
-		  indexes[county] = county;
-		  county++;
-		  }else{
-			  for(int j=0;j<county;j++){
-				  if(!strcmp(arr[j]._url,temp->_urlRecord->_url)){//match found
-					  indexes[j] = -999;
-				  }
-			  }
-		  }
-		  temp = temp->_next;
-	  }
   }
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
@@ -212,15 +189,12 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   
   URLRecordList * t = head;
   int countURLs = 1;
-  if(strs.size()==1){
-  	while(t!=NULL){
-		fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", countURLs, t->_urlRecord->_url, t->_urlRecord->_url );
-		fprintf( fout, "<blockquote>%s<p></blockquote>\n", t->_urlRecord->_description );
-		countURLs ++;
-		t=t->_next;
-  	}
-  }
-  
+  while(t!=NULL){
+	fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", countURLs, t->_urlRecord->_url, t->_urlRecord->_url );
+    fprintf( fout, "<blockquote>%s<p></blockquote>\n", t->_urlRecord->_description );
+  	countURLs ++;
+  	t=t->_next;
+    }
   
   
 
