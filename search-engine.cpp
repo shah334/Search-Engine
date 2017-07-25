@@ -67,9 +67,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  //printf("Description : %s\n\n",d);
 	  } else{//store if blank
 		  if(k!=0){
-		 printf("%s\n",UR);
+		// printf("%s\n",UR);
 		  _urlArray[in]._url = strdup(UR);
-		  //printf("%s\n", _urlArray[in]._url);
+		  printf("%s\n", _urlArray[in]._url);
 		  _urlArray[in]._description = strdup(d);
 		  //printf("%s\n\n", _urlArray[in]._description);
 		  in++;
