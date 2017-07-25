@@ -83,6 +83,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   ifstream f("word.txt");
   string s;
   while(getline(f,s)){
+	  s = s+ " ";
 	  string w = "";
 	  int sp = 0;//store the index of first space
 	  for(int i=0;i<s.length();i++){
