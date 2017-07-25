@@ -37,8 +37,12 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   ifstream f("word.txt");
   string s;
   while(getline(f,s)){
-	  printf("%s",s.c_str());
-	  printf("\n\n");
+	  //printf("%s",s.c_str());
+	  //printf("\n\n");
+	  for(int i=0;i<s.length();i++){
+		  
+	  }
+	  
   }
   
 
