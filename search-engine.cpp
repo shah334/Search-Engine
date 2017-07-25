@@ -1,4 +1,4 @@
-//TODO: Multiple words, AVL.
+//TODO:AVL.
 #include <string.h>
 #include "search-engine.h"
 #include <vector>
