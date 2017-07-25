@@ -47,8 +47,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  string ind = "";
 	  string url = "";
 	  string desc;
+	  int index;
 	  if(k%3==1){
-		  int index;
+		  
 		  for(int i=0;i<st.length();i++){
 			  if(st[i]!=' '){
 				  ind = ind + st[i];
@@ -60,14 +61,16 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  	}
 	  	UR = url.c_str();
 	  	index = atoi(ind.c_str());
-	  	printf("%s\n",UR);
+	  	if(index == 123)
+	  		printf("%s\n",UR);
 	  } else if(k%3==2){
 		  desc = st;
 		  d=strdup(st.c_str());
 	  } else{//store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
-		 	 //printf("%s\n",_urlArray[in]._url);
+		 	 if(index == 213)
+		 	 	printf("%s\n",_urlArray[in]._url);
 		 	 _urlArray[in]._description = strdup(d);
 		 	 //printf("%s\n",_urlArray[in]._description);
 		 	 in++;
