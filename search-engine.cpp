@@ -41,7 +41,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   int k=0;
   while(getline(f1,st)){
 	  if(st == ""){
-		  st = " ";
+		  k++;
 	  }
 	  k++;
 	  if(k%2!=0){
