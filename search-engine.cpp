@@ -96,8 +96,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  _ind = "";//for next numbers
 			  URLRecord * n = &_urlArray[_index];
 			  list->_urlRecord = n;
-			  printf("%s\n",list->_urlRecord->_url);
-			  list->_next = NULL;
+			  // printf("%s\n",list->_urlRecord->_url);
+			  list = list->_next;
 		  }
 
 	  }
