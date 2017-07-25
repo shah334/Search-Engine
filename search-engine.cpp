@@ -66,10 +66,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  d=strdup(st.c_str());
 	  } else{//store if blank
 		  if(k!=0){
-		 	 //_urlArray[in]._url = strdup(UR);
-		 	 printf("%s\n",_urlArray[in]._url);
-		 	 //_urlArray[in]._description = strdup(d);
-		 	 printf("%s\n",_urlArray[in]._description);
+		 	 _urlArray[in]._url = strdup(UR);
+		 	 //printf("%s\n",_urlArray[in]._url);
+		 	 _urlArray[in]._description = strdup(d);
+		 	 //printf("%s\n",_urlArray[in]._description);
 		 	 in++;
 		 		 if(in == maxSize){
 		 		 	maxSize = maxSize * 2;
