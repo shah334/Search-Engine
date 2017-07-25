@@ -48,7 +48,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  break;
 		  }
 		  
-		  printf("Word %s", w.c_str());
+		  printf("Word %s\n\n", w.c_str());
+		  
 	  }
 	  
   }
