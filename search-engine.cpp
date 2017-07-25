@@ -72,21 +72,11 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
 		 	 printf("%s\n",_urlArray[in]._url);
+		 	 UR = "";
 		 	 _urlArray[in]._description = strdup(d);
+		 	 d = "";
 		 	 printf("%s\n",_urlArray[in]._description);
-		 	 in++;/*
-		 		 if(in == maxSize){
-		 		 	maxSize = maxSize * 2;
-		 		 	URLRecord * n = new URLRecord[maxSize];
-		 		 		for(int i =0; i < maxSize ; i ++){
-		 		 			n = NULL;
-			  			}
-			  			for(int i=0;i< maxSize/2; i++){
-			  				n[i] = _urlArray[i];
-			  			}
-			  			delete [] _urlArray;
-			  			_urlArray = n;
-			  }*/
+		 	 in++;
 		  }
 	  }
   }
