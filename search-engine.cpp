@@ -107,6 +107,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  else{
 			  _index = atoi(_ind.c_str());//get the numerical value
 			 // printf("%d\n",_index);
+			 if(!strcmp("`this",word)){
+				 printf("%d\n", _index);
+			 }
 			  _ind = "";//for next numbers
 			  URLRecord n = _urlArray[_index];
 		  }
