@@ -57,12 +57,13 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 	  	}
 	  	index = atoi(ind.c_str());
-		printf("Index %d, URL: %s\n\n",index,url.c_str());
+		//printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else if(k%3==2){
 		  desc = st;
 		 // printf("Description : %s\n\n",desc.c_str());
 	  } else{//store if blank
-		 // printf("%s\n",url.c_str());
+		  if(k!=0){
+		 printf("%s\n",url.c_str());
 		  _urlArray[in]._url = strdup(url.c_str());
 		  _urlArray[in]._description = strdup(desc.c_str());
 		  in++;
@@ -78,6 +79,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  delete [] _urlArray;
 			  _urlArray = n;
 		  }*/
+		  }
 	  }
   }
 
