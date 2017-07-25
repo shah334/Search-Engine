@@ -119,7 +119,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
-
+  struct timespec start, stop;
   if (strcmp(documentRequested, "/")==0) {
     // Send initial form
     fprintf(fout, "<TITLE>CS251 Search</TITLE>\r\n");
@@ -156,7 +156,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   }
   int counter = 0;
   URLRecord * _u = new URLRecord[10000];
-  
+
   for(int i=0;i<strs.size();i++){
 	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());
     if(i==0){//if the first word is searched, store all urls else cross them off if theyre not intersections
