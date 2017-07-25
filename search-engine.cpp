@@ -62,8 +62,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  	}
 	  	UR = url.c_str();
 	  	index = atoi(ind.c_str());
-	  	if(index == 213)
+	  	if(index == 213){
 	  		printf("%s\n",UR);
+	  		t = UR;
+	  	}
 	  } 
 	  if(k%3==2){
 		  desc = st;
@@ -77,7 +79,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		 	 _urlArray[in]._url = strdup(UR);
 		 	 
 		 	 if(index==213){
-			 	 t=UR;
+			 	// t=UR;
 		 	 printf("%s\n",t);
 		 	 printf("%s\n",_urlArray[in]._url);
 		 	 }
