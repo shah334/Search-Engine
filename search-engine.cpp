@@ -85,26 +85,28 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  //printf("WORD: %s\n",word);
 	  int _index;
 	  string _ind="";
-	  URLRecordList * list = new URLRecordList();
-	  int count = 0;
-	  //list->_next = NULL;
-	  for(int i=sp+1;i<s.length();i++){
+	  URLRecordList *head;
+	  head = NULL;
+	  URLRecordList *prev;
+	  prev = NULL;
+	   for(int i=sp+1;i<s.length();i++){
 		  if(s[i]!=' '){
 			  _ind = _ind + s[i];//store the number
 		  }
 		  else{
 			  _index = atoi(_ind.c_str());//get the numerical value
 			 // printf("%d ",_index);
-			  URLRecord * n = &_urlArray[_index];
-			  if(count==0){
-				  count ++;
-			  	list->_urlRecord = n;
-			  }else{
-				  list->_next->_urlRecord = n;
-				  list = list->_next;
+			 URLRecordList * e = new URLRecordList();
+			  if(head==NULL){
+				  head = e;
 			  }
-			  
-			   printf("%s\n",list->_urlRecord->_url);
+			  e->_urlRecord = &_urlArray[_index];
+			  e->_next = NULL;
+			  if(prev!=NULL){
+				  prev->_next = e;
+			  }
+			  prev = e;
+			   printf("%s\n",e->_urlRecord->_url);
 			 // list = list->_next;
 		  }
 
