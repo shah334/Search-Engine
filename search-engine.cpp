@@ -1,4 +1,4 @@
-
+//TODO: Multiple words, AVL.
 #include <string.h>
 #include "search-engine.h"
 #include <vector>
@@ -149,9 +149,33 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
   URLRecordList * head;
+  int arr[100];
+  int counter = 0;
+  URLRecord * _u = new URLRecord[100];
   for(int i=0;i<strs.size();i++){
-	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());//get the data
+	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());
+    if(i==0){//if the first word is searched, store all urls else cross them off if theyre not intersections
+      URLRecordList * temp = head;
+      while(temp!=NULL){
+        _u[counter] = *temp->_urlRecord;
+        arr[counter] = 1;
+        temp = temp->_next;
+        counter ++;
+      }
+    }else{
+      URLRecordList * temp = head;
+      while(temp!=NULL){
+        for(int j=0;j<counter;j++){
+          if(!(strcmp(temp->_urlRecord->_url,_u[j]._url))){
+              arr[j] = -1;
+              break;
+            }
+          }
+          temp = temp ->_next;
+        }
+      }
   }
+  
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
   // are common for al the words. Then print the URLs and descriptions
@@ -185,7 +209,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   for ( int i = 0; i < nurls; i++ ) {
     fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, urls[i], urls[i] );
     fprintf( fout, "<blockquote>%s<p></blockquote>\n", description[i] );
-  }*/
+  }
   
   URLRecordList * t = head;
   int countURLs = 1;
@@ -195,7 +219,14 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   	countURLs ++;
   	t=t->_next;
     }
-  
+  */
+
+  for(int i=0;i<counter;i++){
+    if(arr[i]==-1){
+      fprintf( fout, "<h3>%d. <a href=\"%s\">%s</a><h3>\n", i+1, _u[i]._url, _u[i]._url );
+      fprintf( fout, "<blockquote>%s<p></blockquote>\n", _u[i]._description );
+    }
+  }
   
 
   // Add search form at the end
