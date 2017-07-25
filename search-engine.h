@@ -16,7 +16,7 @@ enum DictionaryType {
 // Inherits from MiniHTTPD
 class SearchEngine : public MiniHTTPD {
   Dictionary * _wordToURLList;
-  
+  URLRecord * _urlArray;
   // Add any other member variables you need
  public:
   // Constructor for SearchEngine

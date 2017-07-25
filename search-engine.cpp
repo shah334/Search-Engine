@@ -35,16 +35,18 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  return;
   }
   
+  _urlArray = new URLRecord[1000];
   ifstream f1("url.txt");
-  
   string st;
   int k=0;
+
   while(getline(f1,st)){
 	  k++;
+	  string ind = "";
+	  string url = "";
+	  string desc;
 	  if(k%3==1){
 		  int index;
-		  string ind = "";
-		  string url = "";
 		  for(int i=0;i<st.length();i++){
 			  if(st[i]!=' '){
 				  ind = ind + st[i];
@@ -55,13 +57,13 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 	  	}
 	  	index = atoi(ind.c_str());
-		 printf("Index %d, URL: %s\n\n",index,url.c_str());
+		printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else if(k%3==2){
-		  string desc = st;
+		  desc = st;
 		  printf("Description : %s\n\n",desc.c_str());
 	  }
   }
-  
+
   ifstream f("word.txt");
   string s;
   string w = "";
@@ -80,7 +82,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	  }
   }
-  
+
 
 }
 void
