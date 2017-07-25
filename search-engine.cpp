@@ -74,7 +74,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		 	 printf("%s\n",_urlArray[in]._url);
 		 	 _urlArray[in]._description = strdup(d);
 		 	 printf("%s\n",_urlArray[in]._description);
-		 	 in++;
+		 	 in++;/*
 		 		 if(in == maxSize){
 		 		 	maxSize = maxSize * 2;
 		 		 	URLRecord * n = new URLRecord[maxSize];
@@ -86,7 +86,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  			}
 			  			delete [] _urlArray;
 			  			_urlArray = n;
-			  }
+			  }*/
 		  }
 	  }
   }
