@@ -57,10 +57,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 	  	}
 	  	index = atoi(ind.c_str());
-		printf("Index %d, URL: %s\n\n",index,url.c_str());
+		//printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else if(k%3==2){
 		  desc = st;
-		  printf("Description : %s\n\n",desc.c_str());
+		 // printf("Description : %s\n\n",desc.c_str());
 	  } else{//store if blank
 		  _urlArray[in]._url = strdup(url.c_str());
 		  _urlArray[in]._description = strdup(desc.c_str());
@@ -82,20 +82,33 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
   ifstream f("word.txt");
   string s;
-  string w = "";
   while(getline(f,s)){
-	  //printf("%s",s.c_str());
-	  //printf("\n\n");
+	  string w = "";
+	  int sp = 0;//store the index of first space
 	  for(int i=0;i<s.length();i++){
 		  if(s[i]!=' '){
 			  w = w + s[i];//store the words
 		  }
 		  else{
 			 // printf("Word %s\n\n", w.c_str());
-			  w = "";
+			  sp = i;
 			  break;
 		  }
 
+	  }
+	  int _index;
+	  string _ind="";
+	  for(int i=sp+1;i<s.length();i++){
+		  if(s[i]!=' '){
+			  _ind = _ind + s[i];//store the number
+		  }
+		  else{
+			  _index = atoi(_ind.c_str());//get the numerical value
+			  _ind = "";//for next numbers
+			  URLRecord n = _urlArray[_index];
+			  const char * word = w.c_str();
+			  printf("WORD: %s\n",word);
+		  }
 	  }
   }
 
