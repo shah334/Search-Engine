@@ -182,8 +182,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
       }
   }
   clock_gettime( CLOCK_REALTIME, &stop);
-  accum = ( stop.tv_sec - start.tv_sec )
-          + ( stop.tv_nsec - start.tv_nsec )/BILLION;
+  accum = (( stop.tv_sec - start.tv_sec )
+          + ( stop.tv_nsec - start.tv_nsec ))*1.0/BILLION;
   printf( "%f\n", accum );
   // You need to separate the words before search
   // Search the words in the dictionary and find the URLs that
