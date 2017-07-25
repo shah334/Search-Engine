@@ -1,7 +1,10 @@
 
 #include "minihttpd.h"
 #include "dictionary.h"
-
+#include "webcrawl.h"
+#include "hash-dictionary.h"
+#include "array-dictionary.h"
+#include "bsearch-dictionary.h"
 // Types of dictionaries used
 enum DictionaryType {
   ArrayDictionaryType,

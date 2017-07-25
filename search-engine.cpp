@@ -5,15 +5,44 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
 #include <string>
+#include <fstream>
 using namespace std;
 SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   MiniHTTPD(port)
 {
   // Create dictionary of the indicated type
-  	printf("hi\n");
-  // Populate dictionary and sort it if necessary
-}
+  // Populate dictionary and sort it if necessary  _wordToURLList This member variable will point to the dictionary that will map words to URLRecordList's.  Initially this dictionary will be an ArrayDicitonary but you will later use other dictionary implementations depending on the dictionaryType. Once you create the dictionary, you will populate it with the files url.txt and word.txt. 
+//Note: The key in the dictionary is a word (const char *) and the data is the URLRecordList *. You will need to cast the data to from (void*) to (URLRecordList *) before adding to the dictionary. The structure URLRecordList is defined in webcrawl.h but you may use your own header file if you desire.
+	
+  switch(dictionaryType){
+	  case ArrayDictionaryType:
+	  	_wordToURLList = new ArrayDictionary();
+	  break;
 
+	  case HashDictionaryType:
+	  	_wordToURLList = new HashDictionary();
+	  break;
+
+	  case AVLDictionaryType:
+	    //_wordToURLList = new AVLDictionary();
+	  break;
+
+	  case BinarySearchDictionaryType:
+	  	_wordToURLList = new BinarySearchDictionary();
+	  break;
+
+	  default:
+	  return;
+  }
+  ifstream f("word.txt");
+  string s;
+  while(getline(f,s)){
+	  printf("%s",s.c_str());
+	  printf("\n\n");
+  }
+  
+
+}
 void
 SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 {
