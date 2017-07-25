@@ -75,7 +75,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  w = w + s[i];//store the words
 		  }
 		  else{
-			 printf("Word %s\n\n", w.c_str());
+			 printf("Word %s\n", w.c_str());
 			  sp = i;
 			  break;
 		  }
