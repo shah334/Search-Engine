@@ -55,7 +55,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		  }
 	  	}
 	  	index = atoi(ind.c_str());
-		  printf("Index %d, URL: %s\n\n",index,url.c_str());
+		 printf("Index %d, URL: %s\n\n",index,url.c_str());
 	  }else if(k%3==2){
 		  string desc = st;
 		  printf("Description : %s\n\n",desc.c_str());
@@ -73,7 +73,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  w = w + s[i];//store the words
 		  }
 		  else{
-			  printf("Word %s\n\n", w.c_str());
+			 // printf("Word %s\n\n", w.c_str());
 			  w = "";
 			  break;
 		  }
