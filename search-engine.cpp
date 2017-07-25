@@ -104,7 +104,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  e->_next = NULL;
 			  if(previous!=NULL){
 				  previous->_next = e;
-			  }else
+			  }
 			  previous = e;
 			  // printf("%s\n",prev->_urlRecord->_url);
 			 // list = list->_next;
