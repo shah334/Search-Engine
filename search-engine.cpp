@@ -40,11 +40,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   string st;
   int k=0;
   while(getline(f1,st)){
-	  if(st == ""){
-		  k++;
-	  }
 	  k++;
-	  if(k%2!=0){
+	  if(k%3==1){
 		  int index;
 		  string ind = "";
 		  string url = "";
@@ -59,7 +56,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  	}
 	  	index = atoi(ind.c_str());
 		  printf("Index %d, URL: %s\n\n",index,url.c_str());
-	  }else{
+	  }else if(k%3==2){
 		  string desc = st;
 		  printf("Description : %s\n\n",desc.c_str());
 	  }
