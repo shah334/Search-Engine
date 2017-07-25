@@ -35,7 +35,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  return;
   }
   int maxSize = 1000;
-  _urlArray = new URLRecord[1000];
+  _urlArray = new URLRecord[maxSize];
   ifstream f1("url.txt");
   string st;
   int k=0;
