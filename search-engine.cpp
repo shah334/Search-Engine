@@ -40,6 +40,9 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
   string st;
   int k=0;
   while(getline(f1,st)){
+	  if(st.length()==0){
+		  k--;
+	  }
 	  k++;
 	  if(k%2!=0){
 		  int index;
