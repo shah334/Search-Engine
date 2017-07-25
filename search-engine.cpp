@@ -59,7 +59,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	 _urlArray[k]._description = strdup(d);
 	 getline(f1,st);
 	 _urlArray[k]._url = strdup(UR);
-	 //printf("%s\n",_urlArray[k]._url);
+	 printf("%s\n",_urlArray[k]._url);
 	 //printf("%s\n",_urlArray[k]._description);
 	 k++;
   }
@@ -107,8 +107,6 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 				  previous->_next = e;
 			  }
 			  previous = e;
-			  // printf("%s\n",prev->_urlRecord->_url);
-			 // list = list->_next;
 		  }
 
 	   }
