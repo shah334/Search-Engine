@@ -85,7 +85,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  //printf("WORD: %s\n",word);
 	  int _index;
 	  string _ind="";
-	  URLRecordList * list;
+	  URLRecordList * list = new URLRecordList();
 	  //list->_next = NULL;
 	  for(int i=sp+1;i<s.length();i++){
 		  if(s[i]!=' '){
