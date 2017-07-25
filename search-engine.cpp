@@ -59,8 +59,8 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	 _urlArray[k]._description = strdup(d);
 	 getline(f1,st);
 	 _urlArray[k]._url = strdup(UR);
-	 printf("%s\n",_urlArray[k]._url);
-	 printf("%s\n",_urlArray[k]._description);
+	 //printf("%s\n",_urlArray[k]._url);
+	 //printf("%s\n",_urlArray[k]._description);
 	 k++;
   }
 
@@ -93,8 +93,10 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  _index = atoi(_ind.c_str());//get the numerical value
 			 // printf("%d\n",_index);
 			  _ind = "";//for next numbers
-			  
-			  URLRecord n = _urlArray[_index];
+			  URLRecordList * list;
+			  URLRecord * n = &_urlArray[_index];
+			  list->_urlRecord = n;
+			  list->_next = NULL;
 		  }
 
 	  }
