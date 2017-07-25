@@ -213,7 +213,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
 
   fprintf( fout, "<TITLE>Search Results</TITLE>\r\n");
   fprintf( fout, "<H1> <Center><em>Parshwa's Search Engine</em></H1>\n");
-  fprintf( fout, "<H2> Search Results for \"%s\", time elapsed is \"%ld\" nanoseconds, (%d seconds)</center></H2>\n", words, accum, timeTaken );
+  fprintf( fout, "<H2> Search Results for \"%s\", time elapsed is \"%ld\" nanoseconds, (%f seconds)</center></H2>\n", words, accum, timeTaken );
 
   /*
   for ( int i = 0; i < nurls; i++ ) {
