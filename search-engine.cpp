@@ -45,11 +45,11 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 			  w = w + s[i];
 		  }
 		  else{
+			  printf("Word %s\n\n", w.c_str());
+			  w = "";
 			  break;
 		  }
-		  
-		  printf("Word %s\n\n", w.c_str());
-		  w = "";
+
 	  }
 	  
   }
