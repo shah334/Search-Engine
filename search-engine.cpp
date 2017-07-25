@@ -168,7 +168,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
         for(int j=0;j<counter;j++){
           if(!(strcmp(temp->_urlRecord->_url,_u[j]._url))){
               arr[j]++;
-              break;
+              //break;
             }
           }
           temp = temp ->_next;
