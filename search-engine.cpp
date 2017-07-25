@@ -34,12 +34,12 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  default:
 	  return;
   }
-  
+  int maxSize = 1000;
   _urlArray = new URLRecord[1000];
   ifstream f1("url.txt");
   string st;
   int k=0;
-
+  int in = 0;
   while(getline(f1,st)){
 	  k++;
 	  string ind = "";
@@ -61,6 +61,22 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  }else if(k%3==2){
 		  desc = st;
 		  printf("Description : %s\n\n",desc.c_str());
+	  } else{//store if blank
+		  _urlArray[in]._url = strdup(url.c_str());
+		  _urlArray[in]._description = strdup(desc.c_str());
+		  in++;
+		  if(in == maxSize){
+			  maxSize = maxSize * 2;
+			  URLRecord * n = new URLRecord[maxSize];
+			  for(int i =0; i < maxSize ; i ++){
+				  n = NULL;
+			  }
+			  for(int i=0;i< maxSize/2; i++){
+				  n[i] = _urlArray[i];
+			  }
+			  delete [] _urlArray;
+			  _urlArray = n;
+		  }
 	  }
   }
 
