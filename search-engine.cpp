@@ -74,7 +74,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  {//store if blank
 		  if(k!=0){
 		 	 _urlArray[in]._url = strdup(UR);
-		 	 free((void *)UR);
+		 	 
 		 	 if(index==213){
 		 	 printf("%s\n",UR);
 		 	 printf("%s\n",_urlArray[in]._url);
@@ -82,6 +82,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 		 	 _urlArray[in]._description = strdup(d);
 		 	 if(index==213)
 		 	 printf("%s\n",_urlArray[in]._description);
+		 	 free((void *)UR);
 		 	 in++;/*
 		 		 if(in == maxSize){
 		 		 	maxSize = maxSize * 2;
