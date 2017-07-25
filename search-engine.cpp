@@ -86,6 +86,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  int _index;
 	  string _ind="";
 	  URLRecordList * list;
+	  list->_next = NULL;
 	  for(int i=sp+1;i<s.length();i++){
 		  if(s[i]!=' '){
 			  _ind = _ind + s[i];//store the number
