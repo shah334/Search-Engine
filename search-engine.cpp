@@ -178,7 +178,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   int counter = 0;
   URLRecord * _u = new URLRecord[10000];
   clock_gettime( CLOCK_REALTIME, &start);
-  for(int i=0;i<storr;i++){
+  for(int i=0;i<storr-1;i++){
 	  head = (URLRecordList*)_wordToURLList->findRecord(wordArray[i]);
     if(i==0){//if the first word is searched, store all urls else cross them off if theyre not intersections
       URLRecordList * temp = head;
