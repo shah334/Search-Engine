@@ -25,7 +25,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  break;
 
 	  case AVLDictionaryType:
-    printf("HII");
+    printf("HII\n");
 	    _wordToURLList = new AVLDictionary();
 	  break;
 
