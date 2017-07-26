@@ -278,7 +278,7 @@ int main(int argc, char ** argv)
 
   if (!strcmp(dictType, "avl")) {
     printf("Yo\n");
-    return 0;
+    //return 0;
     dictionaryType = AVLDictionaryType;
   }
   else if (!strcmp(dictType, "hash")) {
