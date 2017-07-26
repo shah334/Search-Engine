@@ -120,26 +120,26 @@ AVLDictionary::restructure(AVLNode * n) {
 	
     while(z != NULL)
 	{
-        int heightleft = 0;
+        int hl = 0;
         if(z->left != NULL)
 		{
-            heightleft = z->left->height;
+            hl = z->left->height;
         }
 		
-        int heightright = 0;
+        int hr = 0;
         if(z->right != NULL)
 		{
-            heightright = z->right->height;
+            hr = z->right->height;
         }
 
-        int heightdiff = heightleft - heightright;
+        int heightdiff = hl - hr;
         if(heightdiff < 0)
             heightdiff = -heightdiff;
 
-        if(heightleft > heightright)
-            z->height = 1+heightleft;
+        if(hl > hr)
+            z->height = 1+hl;
         else
-            z->height = 1+heightright;
+            z->height = 1+hr;
 
         if(heightdiff <= 1)
 		{
