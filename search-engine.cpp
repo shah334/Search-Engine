@@ -283,6 +283,7 @@ int main(int argc, char ** argv)
     dictionaryType = HashDictionaryType;
   }
   else if (!strcmp(dictType, "avl")) {
+    printf("Yo");
     dictionaryType = AVLDictionaryType;
   }
   else if (!strcmp(dictType, "bsearch")) {
