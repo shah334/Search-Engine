@@ -294,7 +294,6 @@ int main(int argc, char ** argv)
     printUsage();
     return 0;
   }
-  dictionaryType = AVLDictionaryType;
   SearchEngine httpd(port, dictionaryType);
 
   httpd.run();
