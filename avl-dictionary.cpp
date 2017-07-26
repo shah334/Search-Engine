@@ -87,23 +87,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
         m->height = 1+maxheight;
         m = m->parent;
     }
-
-	if (debug)
-	{
-		printf("---------- Before Restructure -----------------\n");
-		printNode("", root, 0);
-	}
-	
 	restructure(n);
-
-	if (debug)
-	{
-		checkRecursive(root);
-		
-		printf("---------- After Restructure -----------------\n");
-		printNode("", root, 0);
-	}
-	
 	nElements++;
 		
 	return true;
@@ -315,6 +299,23 @@ AVLDictionary::removeElement(KeyType key)
 
 
 	// Add your implementation here
+	if(findRecord(key)==NULL){
+		return false;
+	}else{
+		AVLNode * n = root;
+		AVLNode * prev = NULL;
+		while(n!=NULL){
+			prev = n;
+			if(strcmp(key, n->key) < 0){
+				n = n->left;
+			}else if(strcmp(key, n->key) > 0){
+				n = n->right;
+			}else{
+			
+			}
+		}
+	}
+	return false;
 	
 	if (debug) {
 		printf("---------- After -----------------\n");
