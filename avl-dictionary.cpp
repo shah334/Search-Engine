@@ -312,7 +312,6 @@ AVLDictionary::addKeysRecursive(AVLNode * node, KeyType * a, int * n) {
 	if (node==NULL) {
 		return;
 	}
-	
 	a[*n] = node->key;
 	(*n)++;
 	addKeysRecursive(node->left, a, n);
