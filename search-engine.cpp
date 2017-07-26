@@ -114,6 +114,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	   }
 	   URLRecordList * l = head;
+     printf("foo\n");
 	 bool flag = _wordToURLList->addRecord(word,(URLRecordList*)head);//ADDED!
 	}
 

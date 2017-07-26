@@ -22,8 +22,7 @@ AVLDictionary::AVLDictionary()
 bool
 AVLDictionary::addRecord( KeyType key, DataType record)
 {
-	int k =0;
-	printf("adding %d",k++);
+	/*
 	AVLNode *n = new AVLNode();
 	
     n->key = key;
@@ -90,6 +89,53 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	restructure(n);
 	nElements++;
 		
+	return true;*/
+	AVLNode * current = root;
+	AVLNode * previous = NULL;
+	while(current!=NULL){
+		previous = current;
+		if(strcmp(key,current->key)==0){
+			current->data = record;
+			return false;
+		}else if(strcmp(key,current->key)<0){
+			current = current -> left;
+		}else{
+			current = current -> right;
+		}
+	}
+
+	AVLNode * n = new AVLNode();
+	n->key = key;
+	n->data = record;
+	n->left = NULL;
+	n->right = NULL;
+	n->parent = NULL;
+	n->height = 1;
+	if(previous==NULL){
+		root = n;
+		return true;
+	}
+
+	if(strcmp(key,previous->key)<0){
+		previous->left = n;
+	}else{
+		previous->right = n;
+	}
+	n->parent = previous;
+
+	AVLNode * m = n->parent;
+	while(m!=NULL){
+		int maxHeight = 0;
+		if(m->left!=NULL){
+			maxHeight = m->left->height;
+		}
+		if(m->right!=NULL && m->right->height>maxHeight){
+			maxHeight = m->right->height;
+		}
+		m->height = maxHeight + 1;
+		m = m->parent;
+	}
+	restructure(n);
 	return true;
 }
 
