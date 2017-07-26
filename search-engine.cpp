@@ -147,10 +147,26 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     }
 
   }
-
+  string tempo = "";
+  const char * wordArray [100];
+  for(int i=0;i<100;i++){
+    wordArray[i] = "";
+  }
+  int storr = 0;
+  w = w + " ";
+  for(int i=0;i<w.length();i++){
+    if(w[i]!=' '){
+      tempo = tempo + w[i];
+    }
+    else{
+      wordArray[storr] = tempo.c_str();
+      tempo = "";
+      printf("%s,\n",wordArray[storr]);
+      storr ++;
+    }
+  }
   vector<string> strs;//vector of words
   boost::split(strs,w,boost::is_any_of(" "));
-
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
   URLRecordList * head;
