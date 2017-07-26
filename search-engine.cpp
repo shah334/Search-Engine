@@ -273,6 +273,7 @@ int main(int argc, char ** argv)
 
   // Get DictionaryType
   const char * dictType = argv[2];
+  printf("%s\n",dictType);
   DictionaryType dictionaryType;
   if (!strcmp(dictType, "array")) {
     dictionaryType = ArrayDictionaryType;
