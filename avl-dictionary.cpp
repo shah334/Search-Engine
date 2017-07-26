@@ -265,17 +265,18 @@ AVLDictionary::findRecord( KeyType key)
 	
 	while (current != NULL)
 	{
-		if (strcmp(current->key, key) == 0)
+		if (strcmp(current->key, key) > 0)
 		{
-			return (DataType)current->data;
+			current = current->left;
+			
 		}
 		else if (strcmp(current->key, key) > 0)
 		{
-			current = current->left;
+			current = current->right;
 		}
 		else
 		{
-			current = current->right;
+			return (DataType)current->data;	
 		}
 	}
 	return NULL;
