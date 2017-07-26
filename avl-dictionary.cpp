@@ -273,7 +273,7 @@ AVLDictionary::restructure(AVLNode * n) {
             maxheight = b->right->height;
         b->height = 1+maxheight;
 
-        z = p;
+        z = z->parent;
     }
 	//Go upwards until root is found
 
