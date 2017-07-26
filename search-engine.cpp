@@ -287,7 +287,7 @@ int main(int argc, char ** argv)
   }
   else if (!strcmp(dictType, "avl")) {
     printf("Yo");
-    return 0;
+    //return 0;
     dictionaryType = AVLDictionaryType;
   }
   else {
