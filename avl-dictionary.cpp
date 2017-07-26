@@ -22,8 +22,8 @@ AVLDictionary::AVLDictionary()
 bool
 AVLDictionary::addRecord( KeyType key, DataType record)
 {
-	
-	
+	int k =0;
+	printf("adding %d",k++);
 	AVLNode *n = new AVLNode();
 	
     n->key = key;
