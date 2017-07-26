@@ -411,13 +411,6 @@ AVLDictionary::AVLDictionary()
 bool
 AVLDictionary::addRecord( KeyType key, DataType record)
 {
-	if ( debug) {
-		printf("------------------------------------\n");
-		printf("addRecord(\"%s\",%ld)\n",  key, (long) record);
-		printf("---------- Before -----------------\n");
-		printNode("", root, 0);
-	}
-	
 	AVLNode *n;
 	n = new AVLNode();
 
@@ -490,21 +483,8 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	//Node does not exist. Create it.
 	//Height might not be valid anymore.
 	//We need to restructure .
-
-	if ( debug) {
-		printf("---------- Before Restructure -----------------\n");
-		printNode("", root, 0);
-	}
-	
 	// Call restructure
-
-	if (debug) {
-		checkRecursive(root);
-		
-		printf("---------- After Restructure -----------------\n");
-		printNode("", root, 0);
-	}
-		
+	restructure(n);
 	nElements++;
 	return true;
 }
