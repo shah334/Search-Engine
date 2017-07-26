@@ -277,8 +277,8 @@ int main(int argc, char ** argv)
   DictionaryType dictionaryType;
 
   if (!strcmp(dictType, "avl")) {
-    printf("Yo");
-    //return 0;
+    printf("Yo\n");
+    return 0;
     dictionaryType = AVLDictionaryType;
   }
   else if (!strcmp(dictType, "hash")) {
@@ -294,7 +294,7 @@ int main(int argc, char ** argv)
     printUsage();
     return 0;
   }
-
+  dictionaryType = AVLDictionaryType;
   SearchEngine httpd(port, dictionaryType);
 
   httpd.run();
