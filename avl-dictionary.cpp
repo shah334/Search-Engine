@@ -287,7 +287,18 @@ DataType
 AVLDictionary::findRecord( KeyType key)
 {
         // Add your implementation here
+	AVLNode * n = root;
 
+	while(n!=NULL){
+		if(strcmp(key,n->key)==0){
+			return n->data;
+		}
+		else if(strcmp(key,n->key)<0){
+			n = n->left;
+		}else{
+			n = n->right;
+		}
+	}
 	return NULL;
 }
 
