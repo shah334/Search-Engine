@@ -277,8 +277,6 @@ AVLDictionary::findRecord( KeyType key)
 		else
 		{
 			return (DataType)current->data;//return if equal
-			
-			
 		}
 	}
 	return NULL;
@@ -289,6 +287,9 @@ bool
 AVLDictionary::removeElement(KeyType key)
 {
 	// Add your implementation here
+	AVLNode * n = root;
+	if(findRecord(key)==NULL)
+		return false;
 	return true;
 }
 
