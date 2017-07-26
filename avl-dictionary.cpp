@@ -297,7 +297,7 @@ AVLDictionary::removeElement(KeyType key)
 		printNode("", root, 0);
 	}
 
-
+	return false;
 	// Add your implementation here
 	if(findRecord(key)==NULL){
 		return false;
@@ -311,7 +311,7 @@ AVLDictionary::removeElement(KeyType key)
 			}else if(strcmp(key, n->key) > 0){
 				n = n->right;
 			}else{
-			
+
 			}
 		}
 	}
