@@ -274,8 +274,9 @@ int main(int argc, char ** argv)
 
   // Get DictionaryType
   const char * dictType = argv[2];
-  printf("%s\n",dictType);
+  printf("%s%d\n",dictType,(strcmp(dictType,"avl")));
   DictionaryType dictionaryType;
+
   if (!strcmp(dictType, "array")) {
     dictionaryType = ArrayDictionaryType;
   }
