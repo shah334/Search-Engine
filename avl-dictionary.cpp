@@ -276,7 +276,8 @@ AVLDictionary::findRecord( KeyType key)
 		}
 		else
 		{
-			return (DataType)current->data;
+			return (DataType)current->data;//return if equal
+			
 			
 		}
 	}
