@@ -276,8 +276,10 @@ int main(int argc, char ** argv)
   const char * dictType = argv[2];
   DictionaryType dictionaryType;
 
-  if (!strcmp(dictType, "array")) {
-    dictionaryType = ArrayDictionaryType;
+  if (!strcmp(dictType, "avl")) {
+    printf("Yo");
+    //return 0;
+    dictionaryType = AVLDictionaryType;
   }
   else if (!strcmp(dictType, "hash")) {
     dictionaryType = HashDictionaryType;
@@ -285,10 +287,8 @@ int main(int argc, char ** argv)
   else if (!strcmp(dictType, "bsearch")) {
     dictionaryType = BinarySearchDictionaryType;
   }
-  else if (!strcmp(dictType, "avl")) {
-    printf("Yo");
-    //return 0;
-    dictionaryType = AVLDictionaryType;
+  else if (!strcmp(dictType, "array")) {
+    dictionaryType = ArrayDictionaryType;
   }
   else {
     printUsage();
