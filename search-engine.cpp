@@ -35,7 +35,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	  default:
       _wordToURLList = new AVLDictionary();
-	  return;
+	  //return;
   }
   int maxSize = 1000;
   _urlArray = new URLRecord[maxSize];
