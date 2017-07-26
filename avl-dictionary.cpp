@@ -22,13 +22,7 @@ AVLDictionary::AVLDictionary()
 bool
 AVLDictionary::addRecord( KeyType key, DataType record)
 {
-	if (debug)
-	{
-		printf("------------------------------------\n");
-		printf("addRecord(\"%s\",%d)\n",  key, record);
-		printf("---------- Before -----------------\n");
-		printNode("", root, 0);
-	}
+	
 	
 	AVLNode *n;
 	n = new AVLNode();
