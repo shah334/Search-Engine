@@ -87,27 +87,12 @@ AVLDictionary::addRecord( KeyType key, DataType record)
         m->height = 1+maxHeight;
         m = m->parent;
     }
-	// Add your implementation here
-	
-	//Find node to insert into 
-	//Node does not exist. Create it.
-	//Height might not be valid anymore.
-	//We need to restructure .
-	// Call restructure
 	nElements++;
 	return true;
 }
 
 void
 AVLDictionary::restructure(AVLNode * n) {
-	//Balance the tree starting at n 
-
-	//Go upwards until root is found
-
-        // See class notes
-
-	// Add your implementation here
-
 	AVLNode *z;
 	z = n->parent;
 	
@@ -275,7 +260,6 @@ AVLDictionary::restructure(AVLNode * n) {
 DataType
 AVLDictionary::findRecord( KeyType key)
 {
-        // Add your implementation here
 	AVLNode *current;
 	current = root;
 	
@@ -297,7 +281,6 @@ AVLDictionary::findRecord( KeyType key)
 	return NULL;
 }
 
-// Removes one element from the dictionary
 bool
 AVLDictionary::removeElement(KeyType key)
 {
