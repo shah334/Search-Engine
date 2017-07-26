@@ -167,7 +167,7 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     }
   }
   vector<string> strs;//vector of words
-  boost::split(strs,w,boost::is_any_of(" "));
+  //boost::split(strs,w,boost::is_any_of(" "));
   // TODO: The words to search in "documentRequested" are in the form
   // /search?word=a+b+c
   URLRecordList * head;
@@ -178,8 +178,8 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
   int counter = 0;
   URLRecord * _u = new URLRecord[10000];
   clock_gettime( CLOCK_REALTIME, &start);
-  for(int i=0;i<strs.size();i++){
-	  head = (URLRecordList*)_wordToURLList->findRecord(strs[i].c_str());
+  for(int i=0;i<storr;i++){
+	  head = (URLRecordList*)_wordToURLList->findRecord(wordArray[i]);
     if(i==0){//if the first word is searched, store all urls else cross them off if theyre not intersections
       URLRecordList * temp = head;
       while(temp!=NULL){
