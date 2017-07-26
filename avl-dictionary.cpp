@@ -93,7 +93,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 
 void
 AVLDictionary::restructure(AVLNode * n) {
-	AVLNode *z;
+	/*AVLNode *z;
 	z = n->parent;
 	
     while(z != NULL) {
@@ -253,7 +253,7 @@ AVLDictionary::restructure(AVLNode * n) {
         b->height = 1+maxHeight;
 
         z = p;
-	}
+	}*/
 }
 
 // Find a key in the dictionary and return corresponding record or NULL
