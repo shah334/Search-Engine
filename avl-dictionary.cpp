@@ -135,7 +135,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 		m->height = maxHeight + 1;
 		m = m->parent;
 	}
-	restructure(n);
+	//restructure(n);
 	return true;
 }
 
