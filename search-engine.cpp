@@ -25,7 +25,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  break;
 
 	  case AVLDictionaryType:
-    printf("HII\n");
+    //printf("HII\n");
 	    _wordToURLList = new AVLDictionary();
 	  break;
 
@@ -114,7 +114,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 
 	   }
 	   URLRecordList * l = head;
-     printf("foo\n");
+     //printf("foo\n");
 	 bool flag = _wordToURLList->addRecord(word,(URLRecordList*)head);//ADDED!
 	}
 
@@ -278,7 +278,7 @@ int main(int argc, char ** argv)
   DictionaryType dictionaryType;
 
   if (!strcmp(dictType, "avl")) {
-    printf("Yo\n");
+    //printf("Yo\n");
     //return 0;
     dictionaryType = AVLDictionaryType;
   }

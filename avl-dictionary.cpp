@@ -143,7 +143,7 @@ void
 AVLDictionary::restructure(AVLNode * n) {
 	//Balance the tree starting at n 
 	
-	/*AVLNode *z;
+	AVLNode *z;
 	z = n->parent;
 	
     while(z != NULL)
