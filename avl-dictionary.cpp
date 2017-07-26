@@ -142,39 +142,36 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 void
 AVLDictionary::restructure(AVLNode * n) {
 	//Balance the tree starting at n 
-	
 	AVLNode *z;
 	z = n->parent;
 	
-    while(z != NULL)
-	{
-        int hl = 0;
+    while(z != NULL) {
+        int heightleft = 0;
         if(z->left != NULL)
 		{
-            hl = z->left->height;
+            heightleft = z->left->height;
         }
 		
-        int hr = 0;
+        int heightright = 0;
         if(z->right != NULL)
 		{
-            hr = z->right->height;
+            heightright = z->right->height;
         }
 
-        int heightdiff = hl - hr;
+        int heightdiff = heightleft - heightright;
         if(heightdiff < 0)
             heightdiff = -heightdiff;
 
-        if(hl > hr)
-            z->height = 1+hl;
+        if(heightleft > heightright)
+            z->height = 1+heightleft;
         else
-            z->height = 1+hr;
+            z->height = 1+heightright;
 
         if(heightdiff <= 1)
 		{
             z = z->parent;
             continue;
         }
-
         AVLNode *y = NULL;
         int maxheight = 0;
         if(z->left != NULL)
@@ -258,7 +255,7 @@ AVLDictionary::restructure(AVLNode * n) {
         }
         else
 		{
-            if(b->left == z)
+            if(p->left == z)
                 p->left = b;
             else
                 p->right = b;
@@ -304,13 +301,8 @@ AVLDictionary::restructure(AVLNode * n) {
             maxheight = b->right->height;
         b->height = 1+maxheight;
 
-        z = z->parent;
-    }
-	//Go upwards until root is found
-
-        // See class notes
-
-	// Add your implementation here*/
+        z = p;
+	}
 }
 
 // Find a key in the dictionary and return corresponding record or NULL
