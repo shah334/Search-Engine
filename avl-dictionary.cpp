@@ -484,7 +484,6 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 	//Height might not be valid anymore.
 	//We need to restructure .
 	// Call restructure
-	restructure(n);
 	nElements++;
 	return true;
 }
