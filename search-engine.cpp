@@ -279,14 +279,15 @@ int main(int argc, char ** argv)
   if (!strcmp(dictType, "array")) {
     dictionaryType = ArrayDictionaryType;
   }
-  else if (!strcmp(dictType, "hash")) {
+  if (!strcmp(dictType, "hash")) {
     dictionaryType = HashDictionaryType;
   }
-  else if (!strcmp(dictType, "avl")) {
+  if (!strcmp(dictType, "avl")) {
     printf("Yo");
     dictionaryType = AVLDictionaryType;
   }
-  else if (!strcmp(dictType, "bsearch")) {
+  
+  if (!strcmp(dictType, "bsearch")) {
     dictionaryType = BinarySearchDictionaryType;
   }
   else {
