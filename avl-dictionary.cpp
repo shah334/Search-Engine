@@ -291,6 +291,7 @@ AVLDictionary::removeElement(KeyType key)
 	if(findRecord(key)==NULL)
 		return false;
 	return true;
+	/*TODO*/
 }
 
 // Returns all the elements in the table as an array of strings.
