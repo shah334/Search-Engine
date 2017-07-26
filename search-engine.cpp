@@ -25,7 +25,7 @@ SearchEngine::SearchEngine( int port, DictionaryType dictionaryType):
 	  break;
 
 	  case AVLDictionaryType:
-	    //_wordToURLList = new AVLDictionary();
+	    _wordToURLList = new AVLDictionary();
 	  break;
 
 	  case BinarySearchDictionaryType:

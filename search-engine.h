@@ -2,6 +2,7 @@
 #include "minihttpd.h"
 #include "dictionary.h"
 #include "webcrawl.h"
+#include "avl-dictionary.h"
 #include "hash-dictionary.h"
 #include "array-dictionary.h"
 #include "bsearch-dictionary.h"
