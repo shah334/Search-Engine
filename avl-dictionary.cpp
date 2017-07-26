@@ -24,8 +24,7 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 {
 	
 	
-	AVLNode *n;
-	n = new AVLNode();
+	AVLNode *n = new AVLNode();
 	
     n->key = key;
     n->data = record;
@@ -42,11 +41,9 @@ AVLDictionary::addRecord( KeyType key, DataType record)
         return true;
     }
 
-    AVLNode *curr;
-	curr = root;
+    AVLNode *curr = root;
 	
-    AVLNode *prev;
-	prev = NULL;
+    AVLNode *prev = NULL;
 	
     while(curr != NULL)
 	{
