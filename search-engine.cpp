@@ -160,9 +160,10 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     }
     else{
       wordArray[storr] = tempo.c_str();
-      tempo = "";
-      printf("%s,\n",wordArray[storr]);
+      
+      printf("%s\n",wordArray[storr]);
       storr ++;
+      tempo = "";
     }
   }
   vector<string> strs;//vector of words
