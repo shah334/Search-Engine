@@ -270,18 +270,20 @@ AVLDictionary::findRecord( KeyType key)
 			current = current->left;
 			
 		}
-		else if (strcmp(current->key, key) > 0)
+		else if (strcmp(current->key, key) < 0)
 		{
 			current = current->right;
 		}
 		else
 		{
-			return (DataType)current->data;	
+			return (DataType)current->data;
+			
 		}
 	}
 	return NULL;
 }
 
+// Removes one element from the dictionary
 bool
 AVLDictionary::removeElement(KeyType key)
 {
