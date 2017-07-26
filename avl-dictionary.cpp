@@ -142,7 +142,8 @@ AVLDictionary::addRecord( KeyType key, DataType record)
 void
 AVLDictionary::restructure(AVLNode * n) {
 	//Balance the tree starting at n 
-	AVLNode *z;
+	
+	/*AVLNode *z;
 	z = n->parent;
 	
     while(z != NULL)
@@ -309,7 +310,7 @@ AVLDictionary::restructure(AVLNode * n) {
 
         // See class notes
 
-	// Add your implementation here
+	// Add your implementation here*/
 }
 
 // Find a key in the dictionary and return corresponding record or NULL
@@ -321,7 +322,7 @@ AVLDictionary::findRecord( KeyType key)
 
 	while(n!=NULL){
 		if(strcmp(key,n->key)==0){
-			return n->data;
+			return (DataType)n->data;
 		}
 		else if(strcmp(key,n->key)<0){
 			n = n->left;
