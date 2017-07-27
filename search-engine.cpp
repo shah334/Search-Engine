@@ -147,7 +147,6 @@ SearchEngine::dispatch( FILE * fout, const char * documentRequested)
     }
 
   }
-  
   vector<string> strs;//vector of words
   boost::split(strs,w,boost::is_any_of(" "));
   // TODO: The words to search in "documentRequested" are in the form
